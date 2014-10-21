@@ -198,11 +198,11 @@ Default:
         Bolas: 1
 
     armor:
-        'Cloth': 1
-        'Leather': 5
-        'Light Armor': 4
-        'Heavy Armor': 3
-        'Plate Armor': 1
+        Cloth: 1
+        Leather: 5
+        Chainmail: 4
+        Scalemail: 3
+        Plate: 2
 
 Cleric:
     primary_weapon:
@@ -229,7 +229,7 @@ Cleric:
     armor:
         'Cloth': 8
         'Leather': 5
-        'Light Armor': 3
+        'Chainmail': 3
 
 Diplomat:
     primary_weapon:
@@ -250,8 +250,8 @@ Diplomat:
     armor:
         Cloth: 10
         Leather: 5
-        'Light Armor': 3
-        'Heavy Armor': 1
+        Chainmail: 3
+        Scalemail: 1
 
 Ranger:
     primary_weapon:
@@ -272,7 +272,6 @@ Ranger:
     armor:
         Cloth: 1
         Leather: 5
-        'Light Armor': 3
 
 Scout:
     primary_weapon:
@@ -291,7 +290,6 @@ Scout:
     armor:
         Cloth: 10
         Leather: 5
-        "Light Armor": 1
 
 
 Rogue:
@@ -302,7 +300,7 @@ Rogue:
     armor:
         Cloth: 5
         Leather: 5
-        "Light Armor": 1
+        Chainmail: 1
 
 Fighter:
 
@@ -335,6 +333,13 @@ Soldier:
         projectile: 10
         thrown: 1
 
+    armor:
+        Leather: 6
+        Chainmail: 4
+        Scalemail: 3
+        Plate: 1
+        
+
     projectile:
         Crossbow: 10
         'Repeater Crossbow': 4
@@ -346,6 +351,14 @@ Soldier:
         Javelin: 10
         'Thrown Knives': 3
         'Thrown Axes': 1
+
+Warrior:
+
+    armor:
+        Leather: 3
+        Chainmail: 5
+        Scalemail: 6
+        Plate: 8
 
 Orc:
     skin:
