@@ -1,0 +1,219 @@
+race:
+    Human     : 5
+    Elf       : 5
+    Dwarf     : 5
+    Orc       : 5
+    Goblin    : 5
+    Halfling  : 3
+    Kobold    : 3
+    Hobgoblin : 3
+    Ogre      : 1
+    Troll     : 1
+
+gender:
+    Male   : 5
+    Female : 5
+
+class:
+    Barbarian: 3
+    Cleric   : 1
+    Diplomat : 2
+    Ranger   : 5
+    Rogue    : 5
+    Sage     : 3
+    Scout    : 3
+    Warrior  : 6
+
+social:
+    Commoner : 5
+    Noble    : 1
+
+traits:
+
+    common:
+        '': 55
+        Loyal: 5
+        Greedy: 5
+        Stubborn: 5
+        Brave: 3
+        Cowardly: 3
+        Prideful: 5
+        Ambitious: 5
+        Cruel: 3
+        Ruthless: 3
+        Disloyal: 2
+        Conniving: 2
+        Meticulous: 2
+        Clumsy: 1
+        Uncompromising: 2
+        Stalwart: 3
+
+    hates:
+        nothing: 45
+        race: 7
+        class: 6
+        sunlight: 1
+        'cheap taverns': 2
+        'insects': 1
+        'cold weather': 2
+        'hot weather': 2
+        losing: 3
+
+    fears:
+        nothing: 65
+        spiders: 7
+        snakes: 7
+        fire: 5
+        darkness: 2
+        heights: 4
+        'being tortured': 3
+        'losing face': 3
+        'being betrayed': 2
+
+
+
+
+Default:
+    primary_weapon:
+        hand-weapon: 5
+        with-shield: 5
+        2-handed: 3
+        dual-wield: 1
+
+    hand-weapon:
+        Sword: 6
+        Axe: 5
+        Mace: 4
+        Warhammer: 3
+
+    with-shield:
+        'Sword & Shield': 6
+        'Axe & Shield': 5
+        'Mace & Shield': 3
+
+    2-handed:
+        'Double Handed Sword': 6
+        'Double Handed Battle Axe': 5
+        'Double Handed Warhammer': 4
+        Spear: 3
+        Halberd: 2
+
+    dual-wield:
+        'Dual Wield Daggers': 5
+        'Dual Wield Swords': 5
+        'Dual Wield Axes': 5
+
+
+    secondary_weapon:
+        none: 10
+        projectile: 5
+        thrown: 3
+
+    projectile:
+        'Short Bow': 6
+        'Bow & Arrow': 5
+        'Crossbow': 5
+
+    thrown:
+        'Thrown Knives': 10
+        'Thrown Axes': 6
+        Bombs: 1
+
+    armor:
+        'Cloth': 1
+        'Leather Armor': 5
+        'Light Armor': 4
+        'Heavy Armor': 3
+        'Plate Armor': 1
+
+Cleric:
+    primary_weapon:
+        hand-weapon: 10
+        2-handed: 10
+        with-shield: 1
+
+    hand-weapon:
+        Mace: 5
+        Dagger: 8
+
+    2-handed:
+        "Staff": 10
+        "Double Handed Warhammer": 1
+
+    with-shield:
+        "Mace and Shield": 10
+        "Hammer and Shield": 3
+
+    secondary_weapon:
+        none: 10
+        projectile: 1
+
+    armor:
+        'Cloth': 8
+        'Leather': 5
+        'Light Armor': 3
+
+Diplomat:
+    primary_weapon:
+        hand_weapon: 10
+        2-handed: 1
+
+    hand_weapon:
+        Dagger: 8
+        Sabre: 5
+        Falchion: 4
+        Rapier: 3
+        Sword: 1
+
+    2-handed:
+        Staff: 10
+        Banner: 3
+
+    armor:
+        Cloth: 10
+        Leather: 5
+        'Light Armor': 3
+        'Heavy Armor': 1
+
+Ranger:
+    primary_weapon:
+        hand-weapon: 10
+        2-handed: 1
+
+    secondary_weapon:
+        projectile: 10
+        thrown: 3
+
+    thrown:
+        'Thrown Knives': 5
+        'Thrown Axes': 3
+
+    armor:
+        Cloth: 1
+        Leather: 5
+        'Light Armor': 3
+
+Scout:
+    primary_weapon:
+        hand-weapon: 5
+        dual-wield: 1
+
+    secondary_weapon:
+        projectile: 5
+        thrown: 1
+
+    armor:
+        Cloth: 10
+        Leather: 5
+        "Light Armor": 1
+
+
+Rogue:
+    primary_weapon:
+        hand-weapon: 5
+        dual-wield: 5
+
+    armor:
+        Cloth: 5
+        Leather: 5
+        "Light Armor": 1
