@@ -1,13 +1,13 @@
 race:
-    Human     : 5
-    Elf       : 5
-    Dwarf     : 5
-    Orc       : 5
+    Human     : 6
+    Elf       : 6
+    Dwarf     : 6
+    Orc       : 6
     Goblin    : 5
-    Halfling  : 3
-    Kobold    : 3
+    Halfling  : 4
     Hobgoblin : 3
-    Ogre      : 1
+    Kobold    : 2
+    Ogre      : 2
     Troll     : 1
 
 gender:
@@ -15,18 +15,18 @@ gender:
     Female : 5
 
 class:
-    Barbarian: 3
+    Barbarian: 4
     Cleric   : 1
     Diplomat : 2
     Ranger   : 5
     Rogue    : 5
-    Sage     : 3
+    Sage     : 1
     Scout    : 3
     Warrior  : 6
 
 social:
     Commoner : 5
-    Noble    : 1
+    Noble    : 2
 
 traits:
 
@@ -35,21 +35,31 @@ traits:
         Loyal: 5
         Greedy: 5
         Stubborn: 5
-        Brave: 3
         Cowardly: 3
         Prideful: 5
         Ambitious: 5
         Cruel: 3
         Ruthless: 3
-        Disloyal: 2
         Conniving: 2
         Meticulous: 2
         Clumsy: 1
         Uncompromising: 2
         Stalwart: 3
+        Jovial: 2
+        Kind: 3
+        Wrathful: 3
+        Forgetful: 1
+        Irresponsible: 1
+        Witty: 2
+        Reckless: 2
+        Resolute: 2
+        Adventurous: 1
+        Timid: 1
+        Humble: 1
+
 
     hates:
-        nothing: 45
+        '': 45
         race: 7
         class: 6
         sunlight: 1
@@ -57,7 +67,10 @@ traits:
         'insects': 1
         'cold weather': 2
         'hot weather': 2
-        losing: 3
+        'large crowds': 2
+        'being alone': 2
+        'loud singing': 2
+        losing: 2
 
     fears:
         nothing: 65
@@ -70,10 +83,63 @@ traits:
         'losing face': 3
         'being betrayed': 2
 
-
+misc:
+    food:
+        apples: 5
+        pears: 3
+        wine: 5
+        ale: 5
+        eggs: 5
+        vegetables: 3
+        meat: 2
+        pork: 3
+        beef: 3
+        poultry: 3
 
 
 Default:
+
+    eyes:
+        brown: 5
+        hazel: 3
+        blue: 3
+        green: 3
+        black: 2
+
+
+    hair_color:
+        black: 5
+        brown: 5
+        blonde: 3
+        red: 3
+        gray: 1
+
+    hair_style:
+        'long': 8
+        'short': 8
+        'shoulder length': 4
+        'short pony tail': 3
+        'long pony tail': 3
+        'long braid': 2
+        'long braids': 2
+        'short braids': 2
+        'shaved head': 2
+
+    skin:
+        pale: 5
+        fair: 5
+        olive: 5
+        tan: 5
+        brown: 5
+        dark: 5
+        amber: 1
+        bronze: 1
+        golden: 1
+        copper: 1
+        ruddy: 1
+        rosy: 1
+
+
     primary_weapon:
         hand-weapon: 5
         with-shield: 5
@@ -82,6 +148,8 @@ Default:
 
     hand-weapon:
         Sword: 6
+        'Short Sword': 3
+        'Long Sword': 2
         Axe: 5
         Mace: 4
         Warhammer: 3
@@ -95,8 +163,9 @@ Default:
         'Double Handed Sword': 6
         'Double Handed Battle Axe': 5
         'Double Handed Warhammer': 4
-        Spear: 3
-        Halberd: 2
+        Spear: 4
+        Halberd: 3
+        Flail: 1
 
     dual-wield:
         'Dual Wield Daggers': 5
@@ -105,19 +174,25 @@ Default:
 
 
     secondary_weapon:
-        none: 10
+        "": 10
         projectile: 5
         thrown: 3
 
     projectile:
         'Short Bow': 6
         'Bow & Arrow': 5
+        'Composite Bow': 3
+        'Long Bow': 2
         'Crossbow': 5
+        'Repeating Crossbow': 1
 
     thrown:
         'Thrown Knives': 10
         'Thrown Axes': 6
-        Bombs: 1
+        'Thrown Clubs': 2
+        'Hunting Net': 3
+        Javelin: 7
+        Bolas: 1
 
     armor:
         'Cloth': 1
@@ -145,7 +220,7 @@ Cleric:
         "Hammer and Shield": 3
 
     secondary_weapon:
-        none: 10
+        "": 10
         projectile: 1
 
     armor:
@@ -185,6 +260,9 @@ Ranger:
         thrown: 3
 
     thrown:
+        Javelin: 10
+        Bolas: 8
+        'Hunting Net': 5
         'Thrown Knives': 5
         'Thrown Axes': 3
 
@@ -197,6 +275,11 @@ Scout:
     primary_weapon:
         hand-weapon: 5
         dual-wield: 1
+
+    hand-weapon:
+        Dagger: 5
+        'Short Sword': 5
+        Sabre: 3
 
     secondary_weapon:
         projectile: 5
@@ -217,3 +300,95 @@ Rogue:
         Cloth: 5
         Leather: 5
         "Light Armor": 1
+
+
+Orc:
+    skin:
+        green: 10
+        'light green': 5
+        'dark green': 5
+        gray: 3
+        black: 3 
+
+    eyes:
+        red: 10
+        yellow: 5
+        black: 5
+
+    hair_style:
+        short: 10
+        'shaved head': 7
+        'bald': 7
+        'top knot': 5
+        'mohawk': 3
+        'long braid': 3
+        'short braids': 2
+        'long ponytail': 2
+        'long': 1
+
+    hair_color:
+        black: 10
+        dark: 7
+        'dark green': 5
+        'dark blue': 3
+        gray: 2
+
+Goblin:
+    same_as: Orc
+
+Hobgoblin:
+    same_as: Orc
+
+Troll:
+    same_as: Orc
+
+Kobold:
+    skin:
+        green: 10
+        blue: 5
+        red: 3
+        purple: 3
+
+    eyes:
+        black: 10
+        yellow: 5
+        red: 3
+
+    hair_color:
+        white: 5
+        black: 3
+        orange: 3
+        yellow: 3
+        golden: 1
+        copper: 1
+
+
+    hair_style:
+        'small crest': 5
+        'large crest': 3
+        'small horns': 5
+        'large horns': 3
+        'spiky ridge': 3
+        'feather tuft': 2
+        'feather plume': 1
+    
+
+Elf:
+    hair_color:
+        blonde: 10
+        white: 7
+        silver: 6
+        golden: 5
+        brown: 5
+        'light blue': 4
+        'pale green': 4
+        'bright orange': 3
+        black: 2
+
+    eyes:
+        blue: 10
+        green: 10
+        yellow: 8
+        purple: 6
+        hazel: 5
+        black: 1
