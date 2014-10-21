@@ -14,16 +14,14 @@ class MinionFactory
     minion.race   = Pickup.new(@data['race']).pick(1)
     minion.gender = Pickup.new(@data['gender']).pick(1)
     minion.class  = Pickup.new(@data['class']).pick(1)
-    minion.social  = Pickup.new(@data['social']).pick(1)
-    #minion.class = 'Cleric'
+    minion.social = Pickup.new(@data['social']).pick(1)
+    minion.class  = Pickup.new(@data['class']).pick(1)
+    #minion.class = 'Fighter'
 
-    minion.primary_weapon = self.indirect_category_pick(minion.class, 'primary_weapon')
+    minion.primary_weapon   = self.indirect_category_pick(minion.class, 'primary_weapon')
     minion.secondary_weapon = self.indirect_category_pick(minion.class, 'secondary_weapon')
-    minion.armor = self.category_pick(minion.class, 'armor')
+    minion.armor            = self.category_pick(minion.class, 'armor')
     
-    #loadout = (@data.include? minion.class and @data[minion.class].include? 'armor') ? minion.class : 'Default'
-    #minion.armor  = Pickup.new(@data[loadout]['armor']).pick(1)
-
     minion.traits = Pickup.new(@data['traits']['common']).pick(3)
     minion.traits = minion.traits.uniq.reject(&:empty?).join(', ')
     minion.traits += ".\n" unless minion.traits.empty?
@@ -42,7 +40,9 @@ class MinionFactory
 
     minion.eyes = self.category_pick(minion.race, 'eyes')
     minion.hair = self.category_pick(minion.race, 'hair_style')
-    minion.hair += ", #{self.category_pick(minion.race, 'hair_color')}" unless minion.hair == 'shaved head' or minion.hair == 'bald'
+    unless minion.hair == 'shaved head' or minion.hair == 'bald'
+        minion.hair += ", #{self.category_pick(minion.race, 'hair_color')}" 
+    end
     minion.skin = self.category_pick(minion.race, 'skin')
 
 
@@ -66,7 +66,8 @@ class MinionFactory
     if tmp.empty?
       weapon = ''
     else
-      current_loadout = default_loadout unless current_loadout.include? tmp
+      current_loadout = default_loadout
+      current_loadout = @data[rpg_class] if @data.include? rpg_class and @data[rpg_class].include? tmp
       weapon = Pickup.new(current_loadout[tmp]).pick(1)
     end
 
@@ -110,4 +111,7 @@ class Minion
 end
 
 m = MinionFactory.new()
-puts m.get_minion()
+
+(0..4).each do
+  puts m.get_minion()
+end

@@ -15,7 +15,8 @@ gender:
     Female : 5
 
 class:
-    Barbarian: 4
+    Fighter  : 4
+    Soldier  : 3
     Cleric   : 1
     Diplomat : 2
     Ranger   : 5
@@ -46,9 +47,11 @@ traits:
         Uncompromising: 2
         Stalwart: 3
         Jovial: 2
-        Kind: 3
+        Courteous: 2
+        Polite: 3
         Wrathful: 3
         Forgetful: 1
+        Aloof: 1
         Irresponsible: 1
         Witty: 2
         Reckless: 2
@@ -196,7 +199,7 @@ Default:
 
     armor:
         'Cloth': 1
-        'Leather Armor': 5
+        'Leather': 5
         'Light Armor': 4
         'Heavy Armor': 3
         'Plate Armor': 1
@@ -301,6 +304,48 @@ Rogue:
         Leather: 5
         "Light Armor": 1
 
+Fighter:
+
+    primary_weapon:
+        hand-weapon: 1
+        2-handed: 10
+        with-shield: 1
+        dual-wield: 5
+
+    2-handed:
+        'Double Handed Sword': 6
+        'Double Handed Battle Axe': 5
+        'Double Handed Warhammer': 4
+        Flail: 4
+
+Soldier:
+
+    primary_weapon:
+        hand-weapon: 1
+        2-handed: 8
+        with-shield: 6
+
+    2-handed:
+        Spear: 8
+        'Spear and Shield': 6
+        Halberd: 5
+        'Halberd and Shield': 4
+
+    secondary_weapon:
+        projectile: 10
+        thrown: 1
+
+    projectile:
+        Crossbow: 10
+        'Repeater Crossbow': 4
+        'Bow & Arrow': 5
+        'Short Bow': 4
+        'Long Bow': 3
+
+    thrown:
+        Javelin: 10
+        'Thrown Knives': 3
+        'Thrown Axes': 1
 
 Orc:
     skin:
