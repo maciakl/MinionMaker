@@ -4,6 +4,7 @@ require 'yaml'
 class MinionFactory
   def initialize()
     @data = YAML.load_file('data.yml')
+    @names = YAML.load_file('names.yml')
   end
 
   def get_minion()
@@ -27,15 +28,26 @@ class MinionFactory
     minion.traits += ".\n" unless minion.traits.empty?
 
     minion.hates = Pickup.new(@data['traits']['hates']).pick(1)
-    minion.hates = Pickup.new(@data['race']).pick(1)+'s' if minion.hates == 'race'
-    minion.hates = "other #{minion.hates}" if minion.hates == minion.race+'s'
-    minion.hates = Pickup.new(@data['class']).pick(1)+'s' if minion.hates == 'class'
-    minion.hates = "other #{minion.hates}" if minion.hates == minion.class+'s'
+
+    if minion.hates == 'race'
+      minion.hates = Pickup.new(@data['race']).pick(1)+'s'
+      minion.hates = "other #{minion.hates}" if minion.hates == minion.race+'s' 
+    elsif minion.hates == 'class'
+      minion.hates = Pickup.new(@data['class']).pick(1)+'s'
+      minion.hates = "other #{minion.hates}" if minion.hates == minion.class+'s'
+    elsif @data['misc'].include? minion.hates
+      minion.hates = Pickup.new(@data['misc'][minion.hates]).pick(1)
+    end
+
     minion.hates = "Hates #{minion.hates}.\n" unless minion.hates.empty?
 
 
     minion.fears = Pickup.new(@data['traits']['fears']).pick(1)
-    minion.fears = "" if minion.fears == 'nothing'
+    
+    if @data['misc'].include? minion.fears
+      minion.fears = Pickup.new(@data['misc'][minion.fears]).pick(1)
+    end
+
     minion.fears = "Fears #{minion.fears}.\n" unless minion.fears.empty?
 
     minion.eyes = self.category_pick(minion.race, 'eyes')
@@ -44,6 +56,9 @@ class MinionFactory
         minion.hair += ", #{self.category_pick(minion.race, 'hair_color')}" 
     end
     minion.skin = self.category_pick(minion.race, 'skin')
+    minion.features = self.category_pick(minion.race, 'features')
+
+    minion.name = self.name_pick(minion.race, minion.gender, minion.social)
 
 
     return minion
@@ -74,6 +89,68 @@ class MinionFactory
     return weapon
 
   end
+
+  def name_pick(race, gender, social)
+    if @names.include? race
+
+      src = @names[race]
+
+      if src['given'].include? gender
+        given_src = src['given'][gender]
+      else
+        given_src = src['given']
+      end
+
+      if src['surname'].include? social
+        surname_src = src['surname'][social]
+      else
+        surcame_src = src['surname']
+      end
+
+
+      given   = MinionFactory.get_name(given_src)
+
+
+      if src['surname'].include? 'sep' and src['surname']['sep'].include? social
+        separator = src['surname']['sep'][social]
+
+        if separator == 'patron'
+          if gender == 'Male' then separator = 'son of' end
+          if gender == 'Female' then separator = 'daughter of' end
+          if src['given'].include? 'Male' 
+            p_src = src['given']['Male']
+          else 
+            p_src = src['given']
+          end
+
+          surname = "#{separator} #{MinionFactory.get_name(p_src)}"
+        else
+          separator = "#{src['surname']['sep'][social]}"
+          surname = "#{separator} #{MinionFactory.get_name(surname_src)}"
+        end
+
+      else
+        surname = MinionFactory.get_name(surname_src)
+      end
+
+      name = "#{given} #{surname}"
+    else
+      name = ''
+    end
+
+    return name
+  end
+
+
+  def self.get_name(src)
+      if src.include? 'prefix' and src.include? 'postfix'
+        Pickup.new(src['prefix']).pick(1).capitalize + 
+        Pickup.new(src['postfix']).pick(1)
+      else
+        Pickup.new(src).pick(1)
+      end
+  end
+
 end
 
 class Minion
@@ -89,20 +166,25 @@ class Minion
   attr_accessor :eyes
   attr_accessor :hair
   attr_accessor :skin
+  attr_accessor :features
+
+  attr_accessor :name
 
   attr_accessor :primary_weapon
   attr_accessor :secondary_weapon
   attr_accessor :armor
 
   def to_s
-    "\n#{@race} #{@gender}\n" +
+    "\n#{@name}\n"+
+    "#{@race} #{@gender}\n" +
     "#{@class}, #{@social}\n"+
 
     "#{@traits}"+
     "#{@hates}"+
     "#{@fears}"+
-    "#{@eyes.capitalize} eyes, #{@skin} skin.\n"+
-    "Hair: #{@hair}.\n"+
+    "#{@eyes.capitalize} eyes, #{@skin} skin."+
+    " #{@features.capitalize}"+ (@features.empty? ? '' : '.')+
+    "\nHair: #{@hair}.\n"+
 
     "Weapons: "+ [@primary_weapon, @secondary_weapon].reject(&:empty?).join(", ")+"\n"+
     "Armor: #{@armor}\n"
@@ -115,3 +197,8 @@ m = MinionFactory.new()
 (0..4).each do
   puts m.get_minion()
 end
+
+(0..9).each do
+  #puts m.name_pick('Dwarf', 'Female', 'Commoner')
+end
+

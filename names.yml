@@ -1,0 +1,346 @@
+Human:
+    given:
+        Male:
+            Jon: 6
+            Merek: 5
+            Ulric: 3
+            Rowan: 5
+            Brom: 5
+            Walten: 5
+            Illiam: 5
+            Greyjoy: 5
+            Pietr: 5
+            Bryce: 5
+            Jarin: 3
+            Lief: 3
+            Cedrin: 5
+            Gravin: 5
+            Joset: 5
+            Diran: 5
+            Ahir: 5
+            Quill: 5
+            Zane: 5  
+            Favian: 5
+            Dine: 3
+            Rilf: 3
+            Roben: 5
+            Gavon: 5
+            Tarrin: 3
+            Rinald: 5
+
+        Female:
+            Jin: 9
+            Mirion: 5
+            Millicent: 5
+            Alys: 5
+            Alia: 5
+            Cedany: 5
+            Ellyn: 5
+            Thea: 3
+            Lin: 3
+            Jacquelyn: 5
+            Elzabeth: 5
+            Hildegard: 5
+            Brunhild: 5
+            Adelaide: 5
+            Alya: 5
+            Beatrix: 5
+            Cristana: 5
+            Elianor: 5
+            Emeline: 5
+            Sabel: 5
+            Joliana: 5
+            Marget: 5
+            Tilda: 5
+            Mira: 5
+            Ryse: 5
+            Nivere: 5
+            Solde: 5
+            Maerwynn: 5
+            Muriel: 5
+            Josslyn: 5
+            Toria: 5
+            Gwendolynn: 5
+
+    surname:
+        Commoner:
+            Sparrow: 6
+            Fox: 5
+            Wolfbane: 5
+            Sawyer: 5
+            Baker: 5
+            Tanner: 5
+            Smith: 5
+            Cartwright: 5
+            Cooper: 5
+            Hawk: 5
+            Hunter: 5
+            Fisher: 5
+            Brooker: 5
+            Clarke: 5
+            Fletcher: 5
+            Frey: 5
+            Payne: 5
+            Taylor: 5
+            Walker: 5
+            Ward: 5
+            Weaver: 5
+            Willow: 5
+
+        Noble:
+            prefix:
+                market: 5
+                mark: 5
+                ash: 5
+                brook: 5
+                port: 5
+                silver: 3
+                river: 3
+                gold: 3
+                south: 5
+                north: 5
+                west: 5
+                east: 5
+                far: 5
+                sea: 5
+                fort: 5
+
+            postfix:
+                side: 5
+                burg: 5
+                dale: 5
+                field: 5
+                place: 5
+                road: 5
+                burn: 4
+                well: 4
+                hill: 5
+                peak: 5
+                strait: 3
+                bridge: 5
+                shire: 5
+                gate: 5
+                hole: 2
+                more: 4
+
+
+        sep: {Noble: of, Commoner: the}
+
+Elf:
+    given:
+        prefix:
+            edo: 5
+            edi: 4
+            galad: 5
+            isilid: 5
+            sili: 5
+            imir: 5
+            bael: 3
+            gin: 3
+            fen: 3
+            il: 3
+
+        postfix:
+            aias: 5
+            avel: 5
+            ari: 5
+            an: 5
+            lan: 5
+            lian: 5
+            lis: 5
+            el: 5
+            eli: 5
+            elis: 5
+            elim: 5
+            ras: 5
+            ran: 5
+            rim: 5
+            rin: 5
+            ris: 5
+            ril: 5
+            ruil: 5
+            thal: 5
+            thar: 5
+            riel: 5
+            rien: 5
+            ilis: 5
+            ilim: 5
+            ilin: 5
+            ilir: 5
+            iten: 3
+            tar: 5
+            tir: 5
+            akash: 3
+            akan: 3
+            akar: 3
+            quis: 3
+            wyn: 3
+
+
+    surname:
+        Commoner:
+            prefix:
+                golden: 5
+                silver: 5
+                swift: 5
+                winter: 5
+                summer: 5
+                spring: 5
+                fair: 5
+                dawn: 5
+                dusk: 5
+                twin: 3
+                dark: 3
+                night: 3
+                moon: 5
+
+            postfix:
+                leaf: 8
+                thorn: 5
+                blade: 5
+                wind: 5
+                arrow: 5
+                spur: 5
+                star: 5
+                spear: 5
+                crest: 5
+
+        Noble:
+            prefix:
+                river: 5
+                silver: 5
+                winter: 5
+                summer: 5
+                ever: 5
+                snow: 5
+                silver: 5
+                golden: 5
+                night: 5
+                dawn: 5
+                light: 3
+
+            postfix:
+                dale: 5
+                peak: 5
+                wood: 5
+                glade: 5
+                springs: 5
+                straits: 5
+                moon: 5
+                bay: 5
+                stone: 3
+                oak: 5
+                pine: 5
+
+        sep: {Noble: of}
+
+
+Dwarf:
+    given:
+        Male:
+            prefix:
+                'bi'   : 5
+                'ba'   : 5
+                'bo'   : 5
+                'bom'  : 5
+                'bam'  : 5
+                'fim'  : 5
+                'kil'  : 5
+                'gim'  : 5
+                'sno'  : 5
+                'gim'  : 5
+                'du'   : 5
+                'di'   : 5
+                'dwa'  : 5
+                'fa'   : 5
+                'fi'   : 5
+                'glo'  : 5
+                'dá'   : 3
+                'fá'   : 3
+                'flá'  : 3
+                'fló'  : 3
+                'gló'  : 3
+                'ná'   : 3
+                'tho'  : 4
+                'trá'  : 3
+                'no'   : 5
+                
+
+            postfix:
+                fur: 5
+                lin: 5
+                bar: 5
+                bur: 5
+                li: 5
+                kon: 5
+                rin: 5
+                ri: 5
+                in: 5
+                ûn: 3
+                îm: 3
+
+        Female:
+            prefix:
+                'ba'  : 5
+                'bo'  : 5
+                'fim' : 5
+                'kim' : 5
+                'du'  : 5
+                'di'  : 5
+                'dwa' : 5
+                'fa'  : 5
+                'fi'  : 5
+                'glo' : 5
+                'no'  : 5
+                'dá'  : 3
+                'fá'  : 3
+                'flá' : 3
+                'fló' : 3
+                'gló' : 3
+                'ná'  : 3
+
+            postfix:
+                la: 5
+                ala: 5
+                ka: 5
+                ra: 5
+                li: 5
+                ria: 5
+                ina: 5
+                ûna: 5
+                ni: 5
+
+    surname:
+        sep: {Noble: patron}
+
+        Commoner:
+            prefix:
+                blood: 5
+                iron: 5
+                silver: 5
+                fire: 4
+                broke: 3
+                grim: 5
+                strong: 5
+                deep: 3
+                blasted: 3
+                fell: 5
+                grudge: 5
+                
+
+            postfix:
+                axe: 6
+                hammer: 5
+                stone: 6
+                shield: 5
+                keep: 5
+                forge: 5
+                beard: 6
+                crag: 5
+                helm: 5
+                smith: 5
+                rune: 5
+                banner: 3
+                bearer: 5
+
+

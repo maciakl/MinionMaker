@@ -1,3 +1,4 @@
+# BASIC CHARACTERISTICS
 race:
     Human     : 6
     Elf       : 6
@@ -18,6 +19,7 @@ class:
     Fighter  : 4
     Soldier  : 3
     Cleric   : 1
+    Bard     : 1
     Diplomat : 2
     Ranger   : 5
     Rogue    : 5
@@ -29,6 +31,7 @@ social:
     Commoner : 5
     Noble    : 2
 
+# Shared traits
 traits:
 
     common:
@@ -41,7 +44,7 @@ traits:
         Ambitious: 5
         Cruel: 3
         Ruthless: 3
-        Conniving: 2
+        Conniving: 1
         Meticulous: 2
         Clumsy: 1
         Uncompromising: 2
@@ -65,27 +68,27 @@ traits:
         '': 45
         race: 7
         class: 6
+        food: 4
+        pests: 3
         sunlight: 1
+        weather: 3
         'cheap taverns': 2
-        'insects': 1
-        'cold weather': 2
-        'hot weather': 2
         'large crowds': 2
         'being alone': 2
         'loud singing': 2
         losing: 2
 
     fears:
-        nothing: 65
-        spiders: 7
-        snakes: 7
-        fire: 5
-        darkness: 2
-        heights: 4
+        '': 65
+        creatures: 7
+        phenomena: 5
+        drowning: 3
         'being tortured': 3
         'losing face': 3
         'being betrayed': 2
+        'being buried alive': 1
 
+# Misc items used to embellish traits
 misc:
     food:
         apples: 5
@@ -99,8 +102,39 @@ misc:
         beef: 3
         poultry: 3
 
+    weather:
+        'hot weather': 5
+        'cold weather': 5
+        'rain': 3
+        'humidity': 3
+        'snow storms': 3
+    
+    pests:
+        rats: 5
+        insects: 5
 
+    creatures:
+        spiders: 5
+        snakes: 5
+        rats: 2
+        bats: 1
+
+    phenomena:
+        fire: 5
+        darkness: 1
+        thunderstorms: 1
+        'closed spaces': 3
+        'heights': 3
+        
+
+
+# Default characteristics for all the races. Each item can be overridden
+# by creating an explicit entry for race. Note that physical features can
+# only be overridden by race entries, and equipment only by class entries.
 Default:
+
+    # Physical features. Override by creating a specific race entry.
+    # For example Orc
 
     eyes:
         brown: 5
@@ -134,14 +168,39 @@ Default:
         olive: 5
         tan: 5
         brown: 5
-        dark: 5
+        'dark brown': 5
+        'pale and freckled': 1
         amber: 1
+        milky: 1
         bronze: 1
         golden: 1
         copper: 1
         ruddy: 1
         rosy: 1
 
+    features:
+        '': 75
+        'large nose': 5
+        'small nose': 5
+        'large ears': 3
+        'piercing stare': 3
+        'small ears': 3
+        'missing left ear': 1
+        'missing right ear': 1
+        'broken nose': 1
+        'pearly white teeth': 2
+        'scar on left cheek': 2
+        'scar on right cheek': 2
+        'blind in left eye': 1
+        'blind in right eye': 1
+        'missing teeth': 1
+        'square jaw': 1
+
+    # Equipment: can be over-ridden by creating a specific Class entry.
+    # Note that primary_weapon and secondary_weapon are "top level" categories
+    # They don't give a result but instead point you to another entry. So to
+    # select a weapon, you pick from primary_weapon first, and then look up
+    # the table yielded by that result
 
     primary_weapon:
         hand-weapon: 5
@@ -204,6 +263,9 @@ Default:
         Scalemail: 3
         Plate: 2
 
+# Override Equipment for specific classes here. Whatever is not defined will
+# fall back on the default
+
 Cleric:
     primary_weapon:
         hand-weapon: 10
@@ -245,7 +307,7 @@ Diplomat:
 
     2-handed:
         Staff: 10
-        Banner: 3
+        Cane: 3
 
     armor:
         Cloth: 10
@@ -352,6 +414,29 @@ Soldier:
         'Thrown Knives': 3
         'Thrown Axes': 1
 
+Bard:
+    primary_weapon:
+        hand-weapon: 1
+
+    hand-weapon:
+        Dagger: 5
+        Rapier: 3
+        Sabre: 2
+        'Short Sword': 1
+
+    secondary_weapon:
+        instrument: 1
+
+    instrument:
+        Lute: 5
+        Harp: 3
+        Flute: 1
+        Dulcimer: 1
+
+    armor:
+        Cloth: 10
+        Leather: 2
+
 Warrior:
 
     armor:
@@ -359,6 +444,8 @@ Warrior:
         Chainmail: 5
         Scalemail: 6
         Plate: 8
+
+# Override race features here.
 
 Orc:
     skin:
@@ -398,14 +485,48 @@ Hobgoblin:
     same_as: Orc
 
 Troll:
-    same_as: Orc
+    skin:
+        'slimy green': 5
+        'scaly blue': 5
+        'dusty, earth tone': 5
+        'pitch black': 4
+
+    eyes:
+        'black, beady': 3
+        'red, glowing': 5
+        'yellow, glowing': 5
+        'white, glowing': 2
+
+    hair_color:
+            black: 5
+            ivory: 3
+            'hand sharpened': 2
+            'filed down': 3
+            'broken': 1
+            'capped with gold': 2
+            'painted red': 1
+
+    hair_style:
+            'large straight horns': 5
+            'large curled horns': 5
+            'small straight horns': 5
+            'small curled horns': 5
+            'uneven horns': 1
+
+Ogre:
+    hair_style:
+        bald: 10
+        'shaved head': 8
+        'short mane': 5
 
 Kobold:
     skin:
-        green: 10
-        blue: 5
-        red: 3
-        purple: 3
+        'scaly green': 10
+        'scaly blue': 5
+        'scaly red': 3
+        'scaly purple': 3
+        'scaly black and yellow': 2
+        'scaly red and orange': 1
 
     eyes:
         black: 10
@@ -438,9 +559,10 @@ Elf:
         silver: 6
         golden: 5
         brown: 5
-        'light blue': 4
-        'pale green': 4
-        'bright orange': 3
+        'golden brown': 4
+        amber: 3
+        'emerald green': 2
+        'amethyst violet': 2
         black: 2
 
     eyes:
