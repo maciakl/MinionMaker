@@ -29,7 +29,7 @@ Human:
             Rinald: 5
 
         Female:
-            Jin: 9
+            Jin: 6
             Mirion: 5
             Millicent: 5
             Alys: 5
@@ -44,7 +44,7 @@ Human:
             Brunhild: 5
             Adelaide: 5
             Alya: 5
-            Beatrix: 5
+            Beatrix: 4
             Cristana: 5
             Elianor: 5
             Emeline: 5
@@ -63,7 +63,7 @@ Human:
             Gwendolynn: 5
 
     surname:
-        sep: 
+        preposition: 
             Noble: the
 
         Commoner:
@@ -168,10 +168,13 @@ Elf:
             edi: 4
             galad: 5
             isilid: 5
-            sili: 5
+            sila: 5
+            isil: 5
+            ilid: 5
             imir: 5
             bael: 3
-            gin: 3
+            biel: 3
+            gini: 3
             fen: 3
             il: 3
 
@@ -179,11 +182,11 @@ Elf:
             aias: 5
             avel: 5
             ari: 5
-            an: 5
+            ian: 5
             lan: 5
             lian: 5
             lis: 5
-            el: 5
+            iel: 5
             eli: 5
             elis: 5
             elim: 5
@@ -203,7 +206,8 @@ Elf:
             ilin: 5
             ilir: 5
             iten: 3
-            tar: 5
+            itar: 5
+            idur: 4
             tir: 5
             akash: 3
             akan: 3
@@ -215,30 +219,30 @@ Elf:
     surname:
         Commoner:
             prefix:
-                golden: 5
-                silver: 5
-                swift: 5
-                winter: 5
-                summer: 5
+                gilden: 5
+                silvir: 5
+                swyft: 5
+                wynter: 5
+                summir: 5
                 spring: 5
-                fair: 5
+                fare: 5
                 dawn: 5
                 dusk: 5
-                twin: 3
-                dark: 3
-                night: 3
-                moon: 5
+                twain: 3
+                darken: 3
+                nite: 3
+                moonlit: 5
 
             postfix:
-                leaf: 8
-                thorn: 5
+                leafe: 8
+                torn: 5
                 blade: 5
-                wind: 5
+                wynd: 5
                 arrow: 5
                 spur: 5
                 star: 5
-                spear: 5
-                crest: 5
+                spyr: 5
+                cryst: 5
 
         Noble: false
 
@@ -349,7 +353,7 @@ Dwarf:
                 ni: 5
 
     surname:
-        sep: 
+        preposition: 
             Noble: patronymic
 
         Noble: true
@@ -416,25 +420,42 @@ Orc:
                 grish: 5
                 gor: 5
                 muz: 5
+                maz: 5
                 lag: 5
+                lat: 5
+                lar: 5
+                lir: 5
                 rad: 5
-                sha: 5
+                shá: 5
                 rag: 5
                 rat: 5
                 urf: 5
                 goth: 5
+                núr: 5
+                nir: 5
+                fár: 5
 
             postfix:
                 nákh: 5
                 bag: 5
                 gash: 5
+                gnash: 5
+                bash: 5
+                mash: 5
                 gol: 5
+                mol: 5
                 duf: 5
-                húr: 5
+                buf: 5
+                rúf: 5
+                muf: 5
+                dúr: 5
                 grat: 5
-                thak: 5
+                gnat: 5
+                thrak: 5
                 lúk: 5
+                múk: 5
                 mog: 5
+                rog: 5
 
         Female:
             prefix:
@@ -471,7 +492,7 @@ Orc:
 
     surname:
         Commoner:
-            x: 1
+            "": 5
 
         Noble:
             x: 1

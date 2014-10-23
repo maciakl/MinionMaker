@@ -2,6 +2,7 @@ require 'pickup'
 require 'yaml'
 
 class MinionFactory
+
   def initialize()
     @data = YAML.load_file('data.yml')
     @names = YAML.load_file('names.yml')
@@ -133,7 +134,7 @@ class MinionFactory
 
           else
             # Names with separator like 'of Loxley'
-            separator = "#{src['surname']['sep'][social]}"
+            separator = "#{src['surname']['preposition'][social]}"
             surname = "#{separator} #{MinionFactory.get_name(surname_src)}"
           end
         else
@@ -172,8 +173,8 @@ class MinionFactory
   end
 
   def self.get_separator(src, category)
-    if src.include? 'sep' and src['sep'].include? category
-        src['sep'][category]
+    if src.include? 'preposition' and src['preposition'].include? category
+        src['preposition'][category]
     else
         ''
     end
@@ -227,6 +228,6 @@ m = MinionFactory.new()
 end
 
 (0..9).each do
-  puts m.name_pick('Orc', 'Female', 'Noble')
+  puts m.name_pick('Orc', 'Male', 'Commoner')
 end
 
