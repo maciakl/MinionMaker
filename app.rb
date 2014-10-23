@@ -227,6 +227,6 @@ m = MinionFactory.new()
 end
 
 (0..9).each do
-  puts m.name_pick('Dwarf', 'Female', 'Noble')
+  puts m.name_pick('Orc', 'Female', 'Noble')
 end
 

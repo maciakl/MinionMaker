@@ -409,6 +409,73 @@ Dwarf:
                 baran: 5
                 ban: 5
 
+Orc:
+    given:
+        Male:
+            prefix:
+                grish: 5
+                gor: 5
+                muz: 5
+                lag: 5
+                rad: 5
+                sha: 5
+                rag: 5
+                rat: 5
+                urf: 5
+                goth: 5
+
+            postfix:
+                nákh: 5
+                bag: 5
+                gash: 5
+                gol: 5
+                duf: 5
+                húr: 5
+                grat: 5
+                thak: 5
+                lúk: 5
+                mog: 5
+
+        Female:
+            prefix:
+                grim: 5
+                girt: 5
+                miz: 5
+                lig: 5
+                rad: 5
+                sha: 5
+                rag: 5
+                rit: 5
+                urf: 5
+                git: 5
+
+            postfix:
+                ná: 5
+                ni: 5
+                ba: 5
+                bi: 5
+                ga: 5
+                la: 5
+                li: 5
+                di: 5
+                da: 5
+                hú: 5
+                ra: 5
+                ri: 5
+                ha: 5
+                lún: 5
+                gi: 5
+                mi: 5
+                ma: 5
+                si: 5
+
+    surname:
+        Commoner:
+            x: 1
+
+        Noble:
+            x: 1
+
         
 
 
