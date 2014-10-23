@@ -63,30 +63,65 @@ Human:
             Gwendolynn: 5
 
     surname:
+        sep: 
+            Noble: the
+
         Commoner:
             Sparrow: 6
             Fox: 5
-            Wolfbane: 5
-            Sawyer: 5
-            Baker: 5
-            Tanner: 5
+            Wolf: 5
+            Bane: 2
+            Saw: 5
+            Bark: 5
+            Tan: 5
             Smith: 5
-            Cartwright: 5
-            Cooper: 5
+            Cart: 5
+            Wright: 5
+            Coop: 5
+            Cups: 5
+            Snow: 5
             Hawk: 5
-            Hunter: 5
-            Fisher: 5
-            Brooker: 5
-            Clarke: 5
-            Fletcher: 5
+            Hunt: 5
+            Fish: 5
+            Brook: 5
+            Fletch: 5
             Frey: 5
             Payne: 5
-            Taylor: 5
-            Walker: 5
+            Bags: 5
+            Walk: 5
             Ward: 5
             Weaver: 5
             Willow: 5
+            Oak: 5
+            Pine: 5
+            Storm: 5
+            River: 5
+            Rain: 5
 
+        Noble:
+            Strong: 5
+            Swift: 5
+            Tall: 5
+            Brave: 5
+            Wise: 5
+            Benevolent: 5
+            Rich: 5
+            Great: 5
+            Pious: 1
+            Radiant: 2
+            Rider: 2
+            Learned: 5
+            Just: 5
+            Fair: 5
+            White: 2
+            Red: 2
+            Blue: 2
+            Green: 2
+            Black: 2
+            Gray: 2
+
+
+    location:
         Noble:
             prefix:
                 market: 5
@@ -124,7 +159,7 @@ Human:
                 more: 4
 
 
-        sep: {Noble: of, Commoner: the}
+
 
 Elf:
     given:
@@ -205,6 +240,10 @@ Elf:
                 spear: 5
                 crest: 5
 
+        Noble: false
+
+    location:
+
         Noble:
             prefix:
                 river: 5
@@ -232,7 +271,6 @@ Elf:
                 oak: 5
                 pine: 5
 
-        sep: {Noble: of}
 
 
 Dwarf:
@@ -311,7 +349,10 @@ Dwarf:
                 ni: 5
 
     surname:
-        sep: {Noble: patron}
+        sep: 
+            Noble: patronymic
+
+        Noble: true
 
         Commoner:
             prefix:
@@ -342,5 +383,32 @@ Dwarf:
                 rune: 5
                 banner: 3
                 bearer: 5
+
+    location:
+
+        Noble:
+            prefix:
+                karaz: 5
+                karak: 5 
+                kházad: 5
+                mor: 3
+                fin: 3
+                dur: 3
+                rûn: 3
+                barûn: 3
+
+            postfix:
+                dûm: 5
+                kardin: 5
+                karin: 5
+                akarak: 5
+                abaraz: 5
+                ungol: 5
+                fángol: 5
+                barak: 5
+                baran: 5
+                ban: 5
+
+        
 
 

@@ -101,39 +101,59 @@ class MinionFactory
         given_src = src['given']
       end
 
+      # Get given name
+      given   = MinionFactory.get_name(given_src)
+
+
+      # Get surname
+
       if src['surname'].include? social
         surname_src = src['surname'][social]
       else
         surcame_src = src['surname']
       end
 
+      if surname_src
 
-      given   = MinionFactory.get_name(given_src)
+        separator = MinionFactory.get_separator(src['surname'], social)
+        if not separator.empty?
 
+          # Names with 'son of' and 'daughter of'
+          if separator == 'patronymic'
+            if gender == 'Male' then separator = 'son of' end
+            if gender == 'Female' then separator = 'daughter of' end
 
-      if src['surname'].include? 'sep' and src['surname']['sep'].include? social
-        separator = src['surname']['sep'][social]
+            if src['given'].include? 'Male' 
+              p_src = src['given']['Male']
+            else 
+              p_src = src['given']
+            end
 
-        if separator == 'patron'
-          if gender == 'Male' then separator = 'son of' end
-          if gender == 'Female' then separator = 'daughter of' end
-          if src['given'].include? 'Male' 
-            p_src = src['given']['Male']
-          else 
-            p_src = src['given']
+            surname = "#{separator} #{MinionFactory.get_name(p_src)}"
+
+          else
+            # Names with separator like 'of Loxley'
+            separator = "#{src['surname']['sep'][social]}"
+            surname = "#{separator} #{MinionFactory.get_name(surname_src)}"
           end
-
-          surname = "#{separator} #{MinionFactory.get_name(p_src)}"
         else
-          separator = "#{src['surname']['sep'][social]}"
-          surname = "#{separator} #{MinionFactory.get_name(surname_src)}"
+          surname = MinionFactory.get_name(surname_src)
         end
-
+      
       else
-        surname = MinionFactory.get_name(surname_src)
+        surname = ''
       end
 
-      name = "#{given} #{surname}"
+      # Get location
+      if src.include? 'location' and src['location'].include? social
+        
+        location = "of #{MinionFactory.get_name(src['location'][social])}"
+      else
+        location = ''
+      end
+
+
+      name = [given, surname, location].reject(&:empty?).join(" ")
     else
       name = ''
     end
@@ -149,6 +169,14 @@ class MinionFactory
       else
         Pickup.new(src).pick(1)
       end
+  end
+
+  def self.get_separator(src, category)
+    if src.include? 'sep' and src['sep'].include? category
+        src['sep'][category]
+    else
+        ''
+    end
   end
 
 end
@@ -199,6 +227,6 @@ m = MinionFactory.new()
 end
 
 (0..9).each do
-  #puts m.name_pick('Dwarf', 'Female', 'Commoner')
+  puts m.name_pick('Dwarf', 'Female', 'Noble')
 end
 
