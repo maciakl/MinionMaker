@@ -67,6 +67,7 @@ Human:
             Noble: the
 
         Commoner:
+            "": 5
             Sparrow: 6
             Fox: 5
             Wolf: 5
@@ -82,12 +83,12 @@ Human:
             Snow: 5
             Hawk: 5
             Hunt: 5
-            Fish: 5
+            Flint: 5
             Brook: 5
             Fletch: 5
             Frey: 5
             Payne: 5
-            Bags: 5
+            Brags: 5
             Walk: 5
             Ward: 5
             Weaver: 5
@@ -99,26 +100,26 @@ Human:
             Rain: 5
 
         Noble:
-            Strong: 5
-            Swift: 5
-            Tall: 5
+            Knight: 6
+            Steward: 5
             Brave: 5
-            Wise: 5
-            Benevolent: 5
-            Rich: 5
-            Great: 5
-            Pious: 1
-            Radiant: 2
+            Hero: 5
+            Legend: 2
+            Favorite: 3
+            Song: 5
+            Blade: 5
+            Shield: 5
+            Hammer: 5
+            Scourge: 2
+            Shadow: 5
+            Star: 5
+            First: 3
+            Dawn: 5
+            Peacemaker: 2
             Rider: 2
-            Learned: 5
-            Just: 5
-            Fair: 5
-            White: 2
-            Red: 2
-            Blue: 2
-            Green: 2
-            Black: 2
-            Gray: 2
+            Tower: 5
+            Hound: 3
+            Hawk: 2
 
 
     location:
@@ -219,13 +220,14 @@ Elf:
     surname:
         Commoner:
             prefix:
-                gilden: 5
-                silvir: 5
+                gold: 5
+                silver: 5
                 swyft: 5
                 wynter: 5
                 summir: 5
                 spring: 5
                 fare: 5
+                far: 5
                 dawn: 5
                 dusk: 5
                 twain: 3
@@ -264,11 +266,12 @@ Elf:
 
             postfix:
                 dale: 5
+                dell: 5
                 peak: 5
                 wood: 5
                 glade: 5
                 springs: 5
-                straits: 5
+                gate: 5
                 moon: 5
                 bay: 5
                 stone: 3
@@ -333,7 +336,7 @@ Dwarf:
                 'fa'  : 5
                 'fi'  : 5
                 'glo' : 5
-                'no'  : 5
+                'nó'  : 5
                 'dá'  : 3
                 'fá'  : 3
                 'flá' : 3
@@ -363,12 +366,16 @@ Dwarf:
                 blood: 5
                 iron: 5
                 silver: 5
+                brass: 5
+                copper: 5
+                steel: 5
+                stone: 6
                 fire: 4
                 broke: 3
                 grim: 5
                 strong: 5
                 deep: 3
-                blasted: 3
+                gold: 3
                 fell: 5
                 grudge: 5
                 
@@ -376,7 +383,6 @@ Dwarf:
             postfix:
                 axe: 6
                 hammer: 5
-                stone: 6
                 shield: 5
                 keep: 5
                 forge: 5
@@ -491,12 +497,103 @@ Orc:
                 si: 5
 
     surname:
-        Commoner:
-            "": 5
+        preposition:
+            Noble: patronymic
+                
+        Commoner: false
 
-        Noble:
-            x: 1
+        Noble: true
 
-        
 
+Goblin:
+    given:
+        prefix:
+            'zi': 5
+            'za': 5
+            'ri': 5
+            'ura': 3
+            'pi': 5
+            'ze': 5
+            're': 5
+            'pe': 5
+            'zu': 3
+            'ru': 3
+            'fri': 2
+            'kni': 2
+            'bri': 3
+            'vre': 3
+            'sre': 3
+
+        postfix:
+            'v': 5
+            'z': 5
+            'p': 5
+            'n': 5
+
+    surname:
+        preposition:
+            Noble: a
+
+        prefix:
+            'pa': 5
+            'pi': 5
+            'ti': 5
+            'ta': 5
+            'vi': 5
+            'va': 5
+            'ni': 5
+            'na': 5
+
+        postfix: 
+            'x': 5
+            'n': 5
+            'z': 5
+            'f': 5
+
+Kobold:
+    given:
+        prefix:
+            'yik'     : 5
+            'yip'     : 5
+            'yip-yip' : 5
+            'tik'     : 5
+            'tik-tik' : 5
+            'pun'     : 5
+            'pun-pun' : 5
+            'pin'     : 5
+            'pin-pin' : 5
+            'pak'     : 5
+            'pak-pak' : 5
+            'zik'     : 5
+            'zik-zik' : 5
+            'nik'     : 5
+            'nik-nik' : 5
+            'zak'     : 5
+            'pak'     : 5
+            'yap'     : 5
+            'puk'     : 5
+            'nuk'     : 5
+
+        postfix:
+            '': 50
+            '-nak' : 5
+            '-zak' : 5
+            '-zug' : 5
+            '-pak' : 5
+            '-yap' : 5
+            '-puk' : 5
+            '-tuk' : 3
+            '-sug' : 5
+            '-tik' : 3
+            '-zag' : 5
+            '-nag' : 5
+            '-nuk' : 5
+
+
+
+    surname:
+        preposition:
+            Noble: patronymic
+
+        Commoner: false
 

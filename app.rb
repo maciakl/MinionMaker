@@ -111,7 +111,7 @@ class MinionFactory
       if src['surname'].include? social
         surname_src = src['surname'][social]
       else
-        surcame_src = src['surname']
+        surname_src = src['surname']
       end
 
       if surname_src
@@ -228,6 +228,6 @@ m = MinionFactory.new()
 end
 
 (0..9).each do
-  puts m.name_pick('Orc', 'Male', 'Commoner')
+  puts m.name_pick('Kobold', 'Male', 'Commoner')
 end
 
