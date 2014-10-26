@@ -450,10 +450,17 @@ Warrior:
 Orc:
     skin:
         green: 10
-        'light green': 5
-        'dark green': 5
+        'light green': 7
+        'pale green': 7
+        'palid green': 5
+        'dark green': 6
         gray: 3
-        black: 3 
+        'dark gray': 3
+        'deep brown': 1
+        'light brown': 1
+        'light brown': 1
+        'palid pink': 1
+        'pitch black': 4
 
     eyes:
         red: 10
@@ -487,9 +494,15 @@ Hobgoblin:
 Troll:
     skin:
         'slimy green': 5
+        'scaly green': 5
+        'smooth, deep green': 3
         'scaly blue': 5
+        'slimy blue': 5
         'dusty, earth tone': 5
-        'pitch black': 4
+        'spiny ivory and brown': 3
+        'scaly brown': 3
+        'scaly black': 4
+        'pitch black': 5
 
     eyes:
         'black, beady': 3
@@ -548,6 +561,7 @@ Kobold:
         'small horns': 5
         'large horns': 3
         'spiky ridge': 3
+        'thorny spikes': 2
         'feather tuft': 2
         'feather plume': 1
     

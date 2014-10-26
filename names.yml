@@ -218,35 +218,49 @@ Elf:
 
 
     surname:
+
+        preposition:
+            Noble: 'of house'
+            Commoner: the
+
         Commoner:
             prefix:
                 gold: 5
                 silver: 5
-                swyft: 5
-                wynter: 5
-                summir: 5
+                winter: 5
+                summer: 5
                 spring: 5
-                fare: 5
-                far: 5
-                dawn: 5
-                dusk: 5
-                twain: 3
-                darken: 3
-                nite: 3
-                moonlit: 5
+                fair: 5
+                night: 3
+                shadow: 3
+                moon: 5
 
             postfix:
-                leafe: 8
-                torn: 5
+                leaf: 8
+                thorn: 5
                 blade: 5
-                wynd: 5
                 arrow: 5
-                spur: 5
                 star: 5
-                spyr: 5
-                cryst: 5
+                spear: 5
 
-        Noble: false
+        Noble: 
+            prefix:
+                gil: 5
+                isil: 5
+                eidil: 5
+                tistle: 5
+                dinil: 5
+                minal: 5
+                silmil: 5
+
+            postfix:
+                fan: 5
+                dur: 5
+                lin: 5
+                sun: 5
+                din: 5
+                fin: 5
+                tar: 5
 
     location:
 
@@ -269,7 +283,7 @@ Elf:
                 dell: 5
                 peak: 5
                 wood: 5
-                glade: 5
+                glade: 6
                 springs: 5
                 gate: 5
                 moon: 5
@@ -277,6 +291,7 @@ Elf:
                 stone: 3
                 oak: 5
                 pine: 5
+                spire: 6
 
 
 
@@ -388,7 +403,8 @@ Dwarf:
                 forge: 5
                 beard: 6
                 crag: 5
-                helm: 5
+                stein: 5
+                cask: 5
                 smith: 5
                 rune: 5
                 banner: 3
@@ -526,9 +542,14 @@ Goblin:
 
         postfix:
             'v': 5
+            'vt': 5
             'z': 5
+            'zt': 5
+            'tz': 5
             'p': 5
+            'pt': 5
             'n': 5
+            'nt': 5
 
     surname:
         preposition:
@@ -545,29 +566,33 @@ Goblin:
             'na': 5
 
         postfix: 
-            'x': 5
+            'ralax': 5
+            'ralaxt': 5
+            'rax': 5
+            'rat': 5
             'n': 5
-            'z': 5
-            'f': 5
+            'nt': 5
+            'natax': 5
+            'zaz': 5
+            'zazt': 5
+            'zatz': 5
+            'zamaf': 5
+            'zaman': 5
+            'rvant': 5
+            'rvint': 5
+            'dafax': 5
 
 Kobold:
     given:
         prefix:
             'yik'     : 5
-            'yip'     : 5
-            'yip-yip' : 5
+            'yip'     : 7
             'tik'     : 5
-            'tik-tik' : 5
             'pun'     : 5
-            'pun-pun' : 5
             'pin'     : 5
-            'pin-pin' : 5
             'pak'     : 5
-            'pak-pak' : 5
             'zik'     : 5
-            'zik-zik' : 5
             'nik'     : 5
-            'nik-nik' : 5
             'zak'     : 5
             'pak'     : 5
             'yap'     : 5
@@ -575,19 +600,35 @@ Kobold:
             'nuk'     : 5
 
         postfix:
-            '': 50
-            '-nak' : 5
-            '-zak' : 5
-            '-zug' : 5
-            '-pak' : 5
-            '-yap' : 5
-            '-puk' : 5
-            '-tuk' : 3
-            '-sug' : 5
-            '-tik' : 3
-            '-zag' : 5
-            '-nag' : 5
-            '-nuk' : 5
+            '': 10
+            'ak' : 5
+            'ik' : 5
+            'uk' : 5
+            'ip' : 5
+            'ap' : 5
+            'zap' : 5
+            'zip' : 5
+            'zup' : 5
+            'zun' : 5
+            'tak' : 5
+            'zak' : 5
+            'zug' : 5
+            'pak' : 5
+            'yap' : 5
+            'yip' : 7
+            'tik' : 5
+            'pun' : 5
+            'puk' : 5
+            'tuk' : 3
+            'sug' : 5
+            'tik' : 3
+            'zag' : 5
+            'nag' : 5
+            'nuk' : 5
+            'panuk' : 5
+            'pakuk' : 5
+            'paruk' : 5
+            'paskuk' : 5
 
 
 
@@ -597,3 +638,202 @@ Kobold:
 
         Commoner: false
 
+
+Halfling:
+    given:
+        Male:
+            prefix:
+                bill: 5
+                sam: 5
+                bun: 2
+                dan: 3
+                grif: 3
+                hal: 5
+                ham: 5
+                hob: 5
+                lar: 2
+
+            postfix:
+                '': 10
+                bo: 5
+                wise: 5
+                grim: 4
+                go: 5
+                fo: 4
+                fast: 5
+                son: 5
+            
+        Female:
+            prefix:
+                bell: 5
+                bella: 5
+                ada: 5
+                dora: 5
+                ela: 5
+                lin: 5
+                rosa: 2
+
+            postfix:
+                '': 10
+                ba: 2
+                manta: 5
+                lara: 5
+                dona: 5
+                nor: 5
+                da: 5
+
+
+    surname:
+        prefix:
+            bag: 5
+            gam: 5
+            bra: 5
+            bur: 5
+            bran: 5
+
+        postfix:
+            gins: 5
+            gee: 5
+            rows: 5
+            dybuck: 5
+
+Ogre:
+    given:
+        Male:
+            prefix:
+                'gúl': 5
+                'var': 5
+                'rar': 5
+                'gar': 5
+                'bal': 5
+                'rad': 5
+                'ram': 5
+                'dam': 5
+                'dru': 5
+                'rún': 5
+                'rag': 5
+
+            postfix:
+                'og': 5
+                'on': 5
+                'ob': 5
+                'os': 5
+                'nar': 5
+                'gar': 5
+
+
+        Female:
+            prefix:
+                'gúl': 5
+                'var': 5
+                'rar': 5
+                'gar': 5
+                'bal': 5
+                'rad': 5
+                'ram': 5
+                'dam': 5
+                'dru': 5
+                'rún': 5
+
+            postfix:
+                'la': 5
+                'da': 5
+                'ma': 5
+                'sa': 5
+                'ka': 5
+                'na': 5
+
+    surname:
+        preposition:
+            Noble: patronymic
+
+        Commoner: false
+
+Hobgoblin:
+
+    given:
+
+        prefix:
+            edo: 5
+            edi: 4
+            gálad: 5
+            isilid: 5
+            sila: 5
+            isil: 5
+            ilid: 5
+            imir: 5
+            bael: 3
+            biel: 3
+            gini: 3
+            fen: 3
+            il: 3
+
+        postfix:
+            ráx: 5
+            fáx: 5
+            dráx: 5
+            hárn: 5
+            hirk: 5
+            zax: 5
+            zirl: 5
+
+    surname:
+        preposition:
+            Noble: 'of house'
+
+        Commoner: false
+
+        Noble:
+            prefix:
+                draz: 5
+                az: 5
+                far: 5
+
+            postfix:
+                gul: 5
+                mal: 5
+                tirem: 5
+                harem: 5
+                parnax: 5
+                
+Troll:
+    given:
+        prefix:
+            par: 5
+            bel: 5
+            bael: 5
+            sep: 5
+            fal: 5
+            meir: 5
+            rame: 5
+            baph: 5
+            mefi: 5
+            mol: 5
+            nam: 5
+            rakh: 5
+            sama: 5
+            sur: 5
+            var: 5
+            za: 5
+
+        postfix:
+            gat: 5
+            nax: 5
+            ial: 5
+            tar: 5
+            ion: 5
+            iroth: 5
+            cor: 5
+            mot: 5
+            egal: 5
+            omet: 5
+            sto: 5
+            och: 5
+            iah: 5
+            san: 5
+            iel: 5
+            pula: 5
+
+    surname:
+        Commoner: false
+        Noble: false
