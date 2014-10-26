@@ -1,3 +1,5 @@
+require 'bundler'
+require 'bundler/setup'
 require 'pickup'
 require 'yaml'
 

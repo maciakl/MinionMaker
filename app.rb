@@ -1,3 +1,5 @@
+require 'bundler'
+require 'bundler/setup'
 require 'sinatra'
 require_relative "minionmaker"
 
