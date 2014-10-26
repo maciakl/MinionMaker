@@ -1,0 +1,83 @@
+%html{:lang => "en"}
+  %head
+    %title Minion Recruitment Center
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "", :name => "Minion Factory App"}/
+    %meta{:content => "", :name => "Luke Maciak"}/
+    %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href=>"//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel=>"stylesheet"}
+
+    :css
+      body {
+        padding: 20px;
+      }
+      .minion-name {
+        padding: 5px;
+      }
+      .minion-desc {
+        padding-left: 15px;
+      }
+
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+
+  %body
+    .container
+      .header
+        .pull-right.text-muted &copy; Luke Maciak
+        %h1.text-muted Minion Academy
+
+
+      %p
+        Below you will find five procedurally generated minions / npc's who are ready to do your bidding.
+        Feel free to tweak and modify them to your liking and use them in your games.
+      %p
+        %a.btn.btn-default.btn-xs{:href => '/'} 
+          %i.glyphicon.glyphicon-refresh
+          Refresh
+        the page for more minions.
+
+      %hr
+      
+      .row
+        - @minions.each do |minion|
+          .col-md-10
+            %h3.bg-info.minion-name #{minion.name}
+            .minion-desc
+              %p 
+                #{minion.race} #{minion.gender}
+                %br
+                #{minion.class}, #{minion.social}
+              %p
+                #{minion.traits}
+                #{minion.hates}
+                #{minion.fears}
+              %p
+                #{minion.eyes.capitalize} eyes, #{minion.skin} skin.
+                #{minion.features.capitalize}#{'.' unless minion.features.empty?}
+                %br
+                Hair: 
+                #{minion.hair}
+              %p
+                %strong Weapons:
+                #{[minion.primary_weapon, minion.secondary_weapon].reject(&:empty?).join(', ')}.
+                %br
+                %strong Armor:
+                #{minion.armor}
+
+      %hr
+      %footer
+        .small.text-muted
+
+          Questions?
+          %a{:href => 'https://twitter.com/LukeMaciak'}
+            %i.fa.fa-twitter
+            @LukeMaciak
+
+          .pull-right
+            %a{:href => 'https://github.com/maciakl/MinionMaker'}
+              %i.fa.fa-github
+              source code
+
+
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
