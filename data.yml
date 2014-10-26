@@ -42,6 +42,8 @@ traits:
         Cowardly: 3
         Prideful: 5
         Ambitious: 5
+        Extravagant: 4
+        Imposing: 3
         Cruel: 3
         Ruthless: 3
         Conniving: 1
@@ -179,9 +181,22 @@ Default:
         rosy: 1
 
     features:
-        '': 75
+        '': 45
         'large nose': 5
         'small nose': 5
+        'flat nose': 5
+        'stubby nose': 5
+        'tall and slender': 5
+        'skinny': 5
+        'short and stocky': 5
+        'muscular': 5
+        'thin and wiry': 5
+        'overweight': 4
+        'pleasantly plump': 5
+        'round face': 5
+        'long face': 5
+        'square face': 5
+        'full cheeks': 5
         'large ears': 3
         'piercing stare': 3
         'small ears': 3
@@ -207,6 +222,39 @@ Default:
         with-shield: 5
         2-handed: 3
         dual-wield: 1
+
+    primary_weapon_type:
+        "": 9
+        steel: 12
+        iron: 12
+        bronze: 9
+        mithril: 6
+        obsidian: 5
+        'dwarven steel': 3
+        'dwarf forged': 3
+        'elf steel': 3
+        'orc forged': 3
+        'ogre steel': 3
+        'goblin iron': 2
+        'troll iron': 2
+        'meteoric iron': 3
+        'cold iron': 2
+        'dragon bone': 1
+        'troll bone': 1
+        'goblin crafted': 2
+        'master crafted': 6
+        'jewel encrusted': 1
+        'ancient heirloom': 1
+        'rusty': 4
+        'worn down': 4
+        'military issue': 4
+        'enchanted': 4
+        'rune inscribed': 3
+        'poisoned': 5
+        'expensive': 5
+        'clean and polished': 5
+        'tattered and dirty': 3
+
 
     hand-weapon:
         Sword: 6

@@ -23,6 +23,7 @@ class MinionFactory
 
     # Equipment
     minion.primary_weapon   = self.indirect_category_pick(minion.class, 'primary_weapon')
+    minion.primary_weapon_type = self.category_pick(minion.class, 'primary_weapon_type')
     minion.secondary_weapon = self.indirect_category_pick(minion.class, 'secondary_weapon')
     minion.armor            = self.category_pick(minion.class, 'armor')
    
@@ -207,6 +208,7 @@ class Minion
   attr_accessor :name
 
   attr_accessor :primary_weapon
+  attr_accessor :primary_weapon_type
   attr_accessor :secondary_weapon
   attr_accessor :armor
 
