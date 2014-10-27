@@ -66,6 +66,8 @@
                 %strong Armor:
                 #{minion.armor_type unless minion.armor_type.empty?}
                 #{minion.armor}
+                %span.text-muted
+                  (#{minion.armor_category.downcase})
 
       %hr
       %footer

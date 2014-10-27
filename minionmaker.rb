@@ -26,7 +26,7 @@ class MinionFactory
     minion.weapon_type         = self.category_pick(minion.class, 'weapon_type')
     minion.secondary_weapon    = self.indirect_category_pick(minion.class, 'secondary_weapon')
     minion.armor_category      = self.category_pick(minion.class, 'armor')
-    minion.armor               = self.indirect_category_pick(minion.class, 'armor')
+    minion.armor               = self.direct_category_pick(minion.class, 'armor', minion.armor_category)
 
     if minion.armor_category == 'Cloth' or minion.armor_category == 'Leather'
       minion.armor_type        = ''
@@ -95,6 +95,22 @@ class MinionFactory
       current_loadout = default_loadout
       current_loadout = @data[rpg_class] if @data.include? rpg_class and @data[rpg_class].include? tmp
       weapon = Pickup.new(current_loadout[tmp]).pick(1)
+    end
+
+    return weapon
+
+  end
+
+  def direct_category_pick(rpg_class, type, choice)
+    current_loadout = default_loadout = @data['Default']
+    current_loadout = @data[rpg_class] if @data.include? rpg_class and @data[rpg_class].include? type
+
+    if choice.empty?
+      weapon = ''
+    else
+      current_loadout = default_loadout
+      current_loadout = @data[rpg_class] if @data.include? rpg_class and @data[rpg_class].include? choice
+      weapon = Pickup.new(current_loadout[choice]).pick(1)
     end
 
     return weapon
