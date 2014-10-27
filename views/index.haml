@@ -60,10 +60,11 @@
                 #{minion.hair}
               %p
                 %strong Weapons:
-                #{minion.primary_weapon_type.split.map(&:capitalize).join(' ') unless minion.primary_weapon_type.empty?}
+                #{minion.weapon_type.split.map(&:capitalize).join(' ') unless minion.weapon_type.empty?}
                 #{[minion.primary_weapon, minion.secondary_weapon].reject(&:empty?).join(', ')}.
                 %br
                 %strong Armor:
+                #{minion.armor_type unless minion.armor_type.empty?}
                 #{minion.armor}
 
       %hr

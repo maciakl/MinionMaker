@@ -223,7 +223,7 @@ Default:
         2-handed: 3
         dual-wield: 1
 
-    primary_weapon_type:
+    weapon_type:
         "": 9
         steel: 12
         iron: 12
@@ -250,7 +250,6 @@ Default:
         'military issue': 4
         'enchanted': 4
         'rune inscribed': 3
-        'poisoned': 5
         'expensive': 5
         'clean and polished': 5
         'tattered and dirty': 3
@@ -310,6 +309,60 @@ Default:
         Chainmail: 4
         Scalemail: 3
         Plate: 2
+
+    Cloth:
+        'fancy expensive clothing': 5
+        'well worn clothing': 5
+        'dirty and tattered clothing': 5
+        'wool cloak': 5
+        'linen cloak': 5
+        'quilted wool jacket': 4
+        'quilted linen jacket': 4
+        'quilted wool cloak': 4
+        'quilted linen cloak': 4
+        'padded gamberson': 3
+        'padded wool gamberson': 3
+        'padded linen gamberson': 3
+        'padded buff coat': 3
+        'padded doublet': 5
+        'fur cloak': 5
+
+    Leather:
+        'leather armor': 8
+        'studded leather armor': 7
+        'leather jacket': 6
+        'studded leather jacket': 5
+        'leather vest': 6
+        'studded leather vest': 5
+        'brigandine': 5
+        'studded brigandine': 5
+        'spiked brigandine': 4
+        'troll hide armor': 1
+        'studded troll hide armor': 1
+        'dragon scale armor': 1
+
+    Chainmail:
+        'mail hauberk': 5
+        'chainmail vest': 5
+        'banded mail': 4
+        'banded mail hauberk': 3
+        'banded mail vest': 4
+
+
+    Scalemail:
+        'scalemail': 5
+        'scalemail vest': 4
+        'scalemail shirt': 3
+        'ornamental scalemail': 3
+        'ornamental scalemale shirt': 2
+        'ornamental scalemale vest': 2
+
+    Plate:
+        'full plate armor': 5
+        'breast plate': 6
+        'cuirass': 8
+        'cuirass with plaudrons': 5
+
 
 # Override Equipment for specific classes here. Whatever is not defined will
 # fall back on the default

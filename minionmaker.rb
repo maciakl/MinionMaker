@@ -22,10 +22,17 @@ class MinionFactory
     minion.class  = Pickup.new(@data['class']).pick(1)
 
     # Equipment
-    minion.primary_weapon   = self.indirect_category_pick(minion.class, 'primary_weapon')
-    minion.primary_weapon_type = self.category_pick(minion.class, 'primary_weapon_type')
-    minion.secondary_weapon = self.indirect_category_pick(minion.class, 'secondary_weapon')
-    minion.armor            = self.category_pick(minion.class, 'armor')
+    minion.primary_weapon      = self.indirect_category_pick(minion.class, 'primary_weapon')
+    minion.weapon_type         = self.category_pick(minion.class, 'weapon_type')
+    minion.secondary_weapon    = self.indirect_category_pick(minion.class, 'secondary_weapon')
+    minion.armor_category      = self.category_pick(minion.class, 'armor')
+    minion.armor               = self.indirect_category_pick(minion.class, 'armor')
+
+    if minion.armor_category == 'Cloth' or minion.armor_category == 'Leather'
+      minion.armor_type        = ''
+    else
+      minion.armor_type        = self.category_pick(minion.class, 'weapon_type')
+    end
    
     # Build personality trait array
     minion.trait = Pickup.new(@data['traits']['common']).pick(3)
@@ -208,9 +215,11 @@ class Minion
   attr_accessor :name
 
   attr_accessor :primary_weapon
-  attr_accessor :primary_weapon_type
+  attr_accessor :weapon_type
   attr_accessor :secondary_weapon
   attr_accessor :armor
+  attr_accessor :armor_category
+  attr_accessor :armor_type
 
   def traits
     @trait.join(', ') + ".\n" unless @trait.empty?
@@ -231,7 +240,7 @@ class Minion
   end
 
   def weapons
-    "Weapons: "+ [@primary_weapon, @secondary_weapon].reject(&:empty?).join(", ")+".\n"
+    "Weapons: "+ [@pprimaririmary_weapon, @secondary_weapon].reject(&:empty?).join(", ")+".\n"
   end
 
   def to_s
