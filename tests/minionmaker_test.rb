@@ -61,6 +61,14 @@ class TestMinionFactoryWithMockData < Minitest::Test
     choice = @mm.name_pick('Orc', 'Female', 'Noble')
     assert_empty choice
   end
+
+  def test_get_name
+    src = @mm.instance_variable_get(:@names)['Human']['surname']['Commoner']
+    src2 = @mm.instance_variable_get(:@names)['Human']['given']['Male']
+    assert_equal 'Smith', MinionFactory.get_name(src)
+    assert_equal 'Jon', MinionFactory.get_name(src2)
+
+  end
   
 end
 
