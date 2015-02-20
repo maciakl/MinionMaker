@@ -1,7 +1,8 @@
 require 'minitest/autorun'
+require 'purdytest'
 require_relative '../minionmaker'
 
-class TestMinionMaker < Minitest::Test
+class TestMinionFactoryWithMockData < Minitest::Test
 
   def setup
     @mm = MinionFactory.new
@@ -51,5 +52,51 @@ class TestMinionMaker < Minitest::Test
     choice = @mm.direct_category_pick('Rogue', 'armor', 'Plate' )
     assert_equal  'full plate armor', choice
   end
+
+  def test_name_pick
+    choice = @mm.name_pick('Human', 'Male', 'Commoner')
+    assert_equal 'Jon Smith', choice
+
+
+    choice = @mm.name_pick('Orc', 'Female', 'Noble')
+    assert_empty choice
+  end
   
+end
+
+class TestMinionFactoryWIthRealData < Minitest::Test
+
+  def setup
+    @mm = MinionFactory.new
+    @minion = @mm.get_minion
+  end
+
+  def test_minion_object
+    assert_instance_of Minion, @minion
+    assert_kind_of String, @minion.race
+    assert_kind_of String, @minion.gender
+    assert_kind_of String, @minion.class
+    assert_kind_of String, @minion.social
+    assert_kind_of Array, @minion.trait
+    #assert_kind_of String, @minion.traits
+    assert_kind_of String, @minion.hate
+    #assert_kind_of String, @minion.hates
+    assert_kind_of String, @minion.fear
+    #assert_kind_of String, @minion.fears
+    assert_kind_of String, @minion.eyes
+    assert_kind_of String, @minion.hair
+    assert_kind_of String, @minion.skin
+    assert_kind_of String, @minion.features
+    assert_kind_of String, @minion.name
+    assert_kind_of String, @minion.primary_weapon
+    assert_kind_of String, @minion.weapon_type
+    assert_kind_of String, @minion.secondary_weapon
+    assert_kind_of String, @minion.secondary_weapon
+    assert_kind_of String, @minion.armor
+    assert_kind_of String, @minion.armor_category
+    assert_kind_of String, @minion.armor_type
+  end
+
+
+
 end

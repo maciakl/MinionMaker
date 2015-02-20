@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'purdytest'
 require_relative '../minionmaker'
 
 class TestMinion < Minitest::Test
