@@ -238,25 +238,25 @@ class Minion
   attr_accessor :armor_type
 
   def traits
-    @trait.join(', ') + ".\n" unless @trait.empty?
+    @trait.join(', ') + "." unless @trait.empty?
   end
 
   def hates
-    "Hates #{@hate}.\n" unless @hate.empty?
+    "Hates #{@hate}." unless @hate.empty?
   end
 
   def fears
-    "Fears #{@fear}.\n" unless @fear.empty?
+    "Fears #{@fear}." unless @fear.empty?
   end
 
   def appearance
     "#{@eyes.capitalize} eyes, #{@skin} skin."+
     " #{@features.capitalize}"+ (@features.empty? ? '' : '.')+
-    "\nHair: #{@hair}.\n"
+    " Hair: #{@hair}."
   end
 
   def weapons
-    "Weapons: "+ [@pprimaririmary_weapon, @secondary_weapon].reject(&:empty?).join(", ")+".\n"
+    "Weapons: "+ [@primary_weapon, @secondary_weapon].reject(&:empty?).join(", ")+"."
   end
 
   def to_s
@@ -264,11 +264,11 @@ class Minion
     "#{@race} #{@gender}\n" +
     "#{@class}, #{@social}\n"+
 
-    "#{traits}"+
-    "#{hates}"+
-    "#{appearance}"+
+    "#{traits}\n"+
+    "#{hates}\n"+
+    "#{appearance}\n"+
 
-    "#{weapons}"+
+    "#{weapons}\n"+
     "Armor: #{@armor}\n"
   end
 

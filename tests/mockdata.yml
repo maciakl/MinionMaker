@@ -1,0 +1,62 @@
+race:
+    Human: 1
+
+gender:
+    Male: 1
+
+class:
+    Warrior: 1
+
+social: 
+    Commoner: 1
+
+traits:
+    common:
+        Greedy: 1
+
+    hates:
+        race: 1
+
+    fears:
+        creatures: 1
+
+misc:
+    creatures:
+        snakes: 1
+
+Default:
+    eyes:
+        brown: 1
+
+    hair_color:
+        brown: 1
+
+    hair_style:
+        short: 1
+
+    skin:
+        pale: 1
+
+    features:
+        'square jaw': 1
+
+    primary_weapon:
+        hand-weapon: 1
+
+    weapon_type:
+        steel: 1
+
+    hand-weapon:
+        Sword: 1
+
+    secondary_weapon:
+        thrown: 1
+
+    thrown:
+        Bolas: 1
+
+    armor:
+        Plate: 1
+
+    Plate:
+        'full plate armor': 1
