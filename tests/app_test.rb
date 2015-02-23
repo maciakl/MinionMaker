@@ -19,6 +19,12 @@ class MainAppTest < Minitest::Test
     assert last_response.body.include?('Minion Academy')
   end
 
+  def test_random_page
+    get '/random'
+    assert last_response.ok?
+    assert last_response.body.include?('the page for more minions')
+  end
+
   def test_json_with_1
     get '/json/1'
     assert last_response.ok?
@@ -42,7 +48,7 @@ class MainAppTest < Minitest::Test
 
   def test_json_naked
     get '/json'
-    assert_equal 404, last_response.status
+    assert last_response.body.include?('Minions as a web service')
   end
 
   def test_json_with_alphanumeric

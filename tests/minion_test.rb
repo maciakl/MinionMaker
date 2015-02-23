@@ -74,6 +74,9 @@ class TestMinion < Minitest::Test
     assert_equal 'olive', m[:skin]
     assert_equal 'square jaw', m[:features]
     assert_equal 'John Smith', m[:name]
+    assert_equal 'Weapons: Sword, Bolas.', m[:weapons]
+    assert_equal 'Brown eyes, olive skin. Square jaw. Hair: brown.', m[:appearance]
+    assert_equal 'Cruel, Greedy.', m[:traits]
 
   end
 
