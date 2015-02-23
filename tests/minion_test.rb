@@ -27,6 +27,16 @@ class TestMinion < Minitest::Test
 
   end
 
+  def test_equality
+    other = @minion.clone
+    assert_equal @minion, other
+    other.race = 'Orc'
+    other.gender = 'Female'
+    other.class = 'Cleric'
+    refute_equal @minion, other
+
+  end
+
   def test_traits
     refute_empty @minion.traits
     assert_equal 'Cruel, Greedy.', @minion.traits
@@ -55,29 +65,56 @@ class TestMinion < Minitest::Test
   def test_hash
     m = @minion.to_hash
     
-    assert_equal 'Human' , m[:race]
-    assert_equal 'Man' , m[:gender]
-    assert_equal 'Warrior', m[:class]
-    assert_equal 'Commoner', m[:social]
-    assert_equal 'Sword', m[:primary_weapon]
-    assert_equal 'steel', m[:weapon_type]
-    assert_equal 'Bolas', m[:secondary_weapon]
-    assert_equal 'Plate', m[:armor_category]
-    assert_equal 'cuirass', m[:armor]
-    assert_equal 'steel', m[:armor_type]
-    assert_equal 'Orcs', m[:hate]
-    assert_equal 'Hates Orcs.', m[:hates]
-    assert_equal 'snakes', m[:fear]
-    assert_equal 'Fears snakes.', m[:fears]
-    assert_equal 'brown', m[:eyes]
-    assert_equal 'brown', m[:hair]
-    assert_equal 'olive', m[:skin]
-    assert_equal 'square jaw', m[:features]
-    assert_equal 'John Smith', m[:name]
+    assert_equal 'Human'         , m[:race]
+    assert_equal 'Man'           , m[:gender]
+    assert_equal 'Warrior'       , m[:class]
+    assert_equal 'Commoner'      , m[:social]
+    assert_equal 'Sword'         , m[:primary_weapon]
+    assert_equal 'steel'         , m[:weapon_type]
+    assert_equal 'Bolas'         , m[:secondary_weapon]
+    assert_equal 'Plate'         , m[:armor_category]
+    assert_equal 'cuirass'       , m[:armor]
+    assert_equal 'steel'         , m[:armor_type]
+    assert_equal 'Orcs'          , m[:hate]
+    assert_equal 'Hates Orcs.'   , m[:hates]
+    assert_equal 'snakes'        , m[:fear]
+    assert_equal 'Fears snakes.' , m[:fears]
+    assert_equal 'brown'         , m[:eyes]
+    assert_equal 'brown'         , m[:hair]
+    assert_equal 'olive'         , m[:skin]
+    assert_equal 'square jaw'    , m[:features]
+    assert_equal 'John Smith'    , m[:name]
     assert_equal 'Weapons: Sword, Bolas.', m[:weapons]
-    assert_equal 'Brown eyes, olive skin. Square jaw. Hair: brown.', m[:appearance]
+    assert_equal 'Brown eyes, olive skin. Square jaw. Hair: brown.' , m[:appearance]
     assert_equal 'Cruel, Greedy.', m[:traits]
 
   end
 
+  def test_json
+    m = JSON.parse(@minion.to_json)
+    
+    assert_equal 'Human'         , m['race']
+    assert_equal 'Man'           , m['gender']
+    assert_equal 'Warrior'       , m['class']
+    assert_equal 'Commoner'      , m['social']
+    assert_equal 'Sword'         , m['primary_weapon']
+    assert_equal 'steel'         , m['weapon_type']
+    assert_equal 'Bolas'         , m['secondary_weapon']
+    assert_equal 'Plate'         , m['armor_category']
+    assert_equal 'cuirass'       , m['armor']
+    assert_equal 'steel'         , m['armor_type']
+    assert_equal 'Orcs'          , m['hate']
+    assert_equal 'Hates Orcs.'   , m['hates']
+    assert_equal 'snakes'        , m['fear']
+    assert_equal 'Fears snakes.' , m['fears']
+    assert_equal 'brown'         , m['eyes']
+    assert_equal 'brown'         , m['hair']
+    assert_equal 'olive'         , m['skin']
+    assert_equal 'square jaw'    , m['features']
+    assert_equal 'John Smith'    , m['name']
+    assert_equal 'Weapons: Sword, Bolas.', m['weapons']
+    assert_equal 'Brown eyes, olive skin. Square jaw. Hair: brown.' , m['appearance']
+    assert_equal 'Cruel, Greedy.', m['traits']
+
+  end
 end

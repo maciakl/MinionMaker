@@ -285,6 +285,28 @@ class Minion
     "Armor: #{@armor}\n"
   end
 
+  def ==(other)
+    @name == other.name &&
+    @race == other.race &&
+    @gender == other.gender &&
+    @class == other.class &&
+    @social == other.social &&
+    @hate == other.hate &&
+    @fear == other.fear &&
+    @trait == other.trait &&
+    @eyes == other.eyes &&
+    @hair == other.hair &&
+    @skin == other.skin &&
+    @features == other.features &&
+    @primary_weapon == other.primary_weapon &&
+    @weapon_type == other.weapon_type &&
+    @secondary_weapon == other.secondary_weapon &&
+    @armor_category == other.armor_category &&
+    @armor_type == other.armor_type &&
+    @armor == other.armor
+
+  end
+
   def to_hash
     {
       :name => @name,
