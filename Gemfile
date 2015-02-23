@@ -5,5 +5,6 @@ gem 'pickup'
 
 group :test do
   gem 'minitest'
+  gem 'rack-test'
   gem 'purdytest'
 end
