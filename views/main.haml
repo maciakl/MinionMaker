@@ -42,6 +42,16 @@
   %code
     http://minion.academy/json/6
 
+%p Or from ruby:
+
+%pre
+  %code.ruby
+    :preserve
+      require 'open-uri'
+      require 'json'
+      minions = JSON.parse(open("http://minion.academy/json/6").read)
+
+
 %p Click below for more information, reference and code samples.
 
 %a.btn.btn-default{:href => '/json'}
