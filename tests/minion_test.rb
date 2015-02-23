@@ -15,7 +15,7 @@ class TestMinion < Minitest::Test
     @minion.secondary_weapon = 'Bolas'
     @minion.armor_category = 'Plate'
     @minion.armor = 'cuirass'
-    @minion.armor_category = 'steel'
+    @minion.armor_type = 'steel'
     @minion.trait = ['Cruel', 'Greedy']
     @minion.hate = 'Orcs'
     @minion.fear = 'snakes'
@@ -50,6 +50,31 @@ class TestMinion < Minitest::Test
   def test_weapons
     refute_empty @minion.weapons
     assert_equal 'Weapons: Sword, Bolas.', @minion.weapons
+  end
+
+  def test_hash
+    m = @minion.to_hash
+    
+    assert_equal 'Human' , m[:race]
+    assert_equal 'Man' , m[:gender]
+    assert_equal 'Warrior', m[:class]
+    assert_equal 'Commoner', m[:social]
+    assert_equal 'Sword', m[:primary_weapon]
+    assert_equal 'steel', m[:weapon_type]
+    assert_equal 'Bolas', m[:secondary_weapon]
+    assert_equal 'Plate', m[:armor_category]
+    assert_equal 'cuirass', m[:armor]
+    assert_equal 'steel', m[:armor_type]
+    assert_equal 'Orcs', m[:hate]
+    assert_equal 'Hates Orcs.', m[:hates]
+    assert_equal 'snakes', m[:fear]
+    assert_equal 'Fears snakes.', m[:fears]
+    assert_equal 'brown', m[:eyes]
+    assert_equal 'brown', m[:hair]
+    assert_equal 'olive', m[:skin]
+    assert_equal 'square jaw', m[:features]
+    assert_equal 'John Smith', m[:name]
+
   end
 
 end

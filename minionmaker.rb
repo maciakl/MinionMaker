@@ -2,6 +2,7 @@ require 'bundler'
 require 'bundler/setup'
 require 'pickup'
 require 'yaml'
+require 'json'
 
 class MinionFactory
 
@@ -270,6 +271,37 @@ class Minion
 
     "#{weapons}\n"+
     "Armor: #{@armor}\n"
+  end
+
+  def to_hash
+    {
+      :name => @name,
+      :race => @race,
+      :gender => @gender,
+      :class => @class,
+      :social => @social,
+      :hate => @hate,
+      :fear => @fear,
+      :hates => hates,
+      :fears => fears,
+      :traits => traits,
+      :eyes => @eyes,
+      :hair => @hair,
+      :skin => @skin,
+      :features => @features,
+      :appearance => appearance,
+      :primary_weapon => @primary_weapon,
+      :weapon_type => @weapon_type,
+      :secondary_weapon => @secondary_weapon,
+      :weapins => weapons,
+      :armor_category => @armor_category,
+      :armor_type => @armor_type,
+      :armor => @armor
+    }
+  end
+
+  def to_json
+    self.to_hash().to_json
   end
 
 end

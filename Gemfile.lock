@@ -3,6 +3,7 @@ GEM
   specs:
     haml (4.0.6)
       tilt
+    json (1.7.7)
     minitest (5.5.1)
     pickup (0.0.10)
     purdytest (2.0.0)
@@ -23,6 +24,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  json
   minitest
   pickup
   purdytest
