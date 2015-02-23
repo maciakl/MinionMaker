@@ -239,15 +239,27 @@ class Minion
   attr_accessor :armor_type
 
   def traits
-    @trait.join(', ') + "." unless @trait.empty?
+    unless @trait.empty?
+      @trait.join(', ') + "."
+    else
+      ""
+    end
   end
 
   def hates
-    "Hates #{@hate}." unless @hate.empty?
+    unless @hate.empty?
+      "Hates #{@hate}." 
+    else
+      ""
+    end
   end
 
   def fears
-    "Fears #{@fear}." unless @fear.empty?
+    unless @fear.empty?
+      "Fears #{@fear}." 
+    else
+      ""
+    end
   end
 
   def appearance
