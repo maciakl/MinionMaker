@@ -7,7 +7,7 @@ minionFactory = MinionFactory.new()
 
 get '/' do
   @minions = []
-  (0..4).each do @minions << minionFactory.get_minion() end
+  (1..6).each do @minions << minionFactory.get_minion() end
  haml :index
 
 end
