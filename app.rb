@@ -9,7 +9,7 @@ get '/' do
   haml :main
 end
 
-get '/random' do
+get '/random/?' do
   @minions = []
   (1..6).each do @minions << minionFactory.get_minion() end
  haml :index
