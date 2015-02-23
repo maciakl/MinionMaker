@@ -6,6 +6,10 @@ require_relative "minionmaker"
 minionFactory = MinionFactory.new()
 
 get '/' do
+  haml :main
+end
+
+get '/random' do
   @minions = []
   (1..6).each do @minions << minionFactory.get_minion() end
  haml :index
@@ -24,4 +28,8 @@ get %r{/json/([\d+]+)} do |number|
 
   content_type :json
   output.to_json
+end
+
+get '/json/?' do
+  haml :json
 end

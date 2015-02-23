@@ -305,7 +305,7 @@ class Minion
       :primary_weapon => @primary_weapon,
       :weapon_type => @weapon_type,
       :secondary_weapon => @secondary_weapon,
-      :weapins => weapons,
+      :weapons => weapons,
       :armor_category => @armor_category,
       :armor_type => @armor_type,
       :armor => @armor

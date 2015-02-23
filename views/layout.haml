@@ -1,12 +1,13 @@
 !!!
 %html{:lang => "en"}
   %head
-    %title Minion Recruitment Center
+    %title Minion Academy
     %meta{:charset => "utf-8"}/
-    %meta{:content => "", :name => "Minion Factory App"}/
+    %meta{:content => "", :name => "Minion Academy App"}/
     %meta{:content => "", :name => "Luke Maciak"}/
     %link{:href => "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", :rel => "stylesheet"}/
     %link{:href=>"//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel=>"stylesheet"}
+    %link{:href=>"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :rel=>"stylesheet"}
 
     :css
       body {
@@ -25,7 +26,8 @@
     .container
       .header
         .pull-right.text-muted &copy; Luke Maciak
-        %h1.text-muted Minion Academy
+        %a{:href => '/'}
+          %h1.text-muted Minion Academy
 
       
       .content
@@ -49,3 +51,5 @@
 
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>

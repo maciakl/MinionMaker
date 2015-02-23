@@ -1,0 +1,141 @@
+%h4 Minions as a web service.
+
+%p 
+  You can now use minion.academy as a web service which returns a valid 
+  %a{:href => 'http://json.org'} JSON
+  object that can be parsed and consumed by your application.
+
+%h3 Usage
+
+%p To fetch a single randomly generated minions wrapped in a JSON object simply access the following url:
+
+%pre http://minion.academy/json/1
+
+%p This will return a JSON object formated like this:
+
+%pre
+  %code.JSON
+    :preserve
+      {
+        "1": { 
+          "name":"Imirrien the Nightarrow",
+          "race":"Elf",
+          "gender":"Female",
+          "class":"Rogue",
+          "social":"Commoner",
+          "hate":"Dwarfs",
+          "fear":"",
+          "hates":"Hates Dwarfs.",
+          "fears":"",
+          "traits":"Stalwart.",
+          "eyes":"blue",
+          "hair":"short braids, white",
+          "skin":"fair",
+          "features":"",
+          "appearance":"Blue eyes, fair skin.  Hair: short braids, white.",
+          "primary_weapon":"Axe",
+          "weapon_type":"bronze",
+          "secondary_weapon":"",
+          "weapons":"Weapons: Axe.",
+          "armor_category":"Leather",
+          "armor_type":"",
+          "armor":"studded leather armor"
+          }
+      }
+
+%p 
+  If you need more minions, simply put the desired number in the URL. For example, to fetch 6 minions use
+  %code http://minion.academy/6
+  \. Currently this service allows you to generate between 1 and 50 minions per request. If you request
+  more than 50 minions, the results will be capped at the max request size.
+  The resulting JSON array is 1-indexed (first element is numbered 1). Some fields are optional
+  and will be returned as empty strings so you should always check for that.
+
+%h3 Ruby Example
+
+%p
+  To use minion.academy in a Ruby project:
+
+%pre
+  %code.ruby
+    :preserve
+      require 'open-uri'
+      require 'json'
+
+      minions = JSON.parse(open("http://minion.academy/json/2").read)
+      puts minions['1']['name']
+      puts minions['2']['name']
+
+
+%h3 Reference
+
+%p The JSON object will include the following fields:
+
+%ul
+  %li
+    %code name
+    The name (usually in first name, given name format).
+  %li
+    %code race
+    The race of the minion.
+  %li
+    %code gender
+    Gender of the minion (currently it's either Male or Female).
+  %li
+    %code class
+    A D&D style class designation.
+  %li
+    %code social
+    Social status (currently either Commoner or Noble).
+  %li
+    %code hate
+    (optional) Something that this minion hates.
+  %li
+    %code fear
+    (optional) Something that this minion fears.
+  %li
+    %code hates
+    (optional) A long form sentence describing what the minion hates (eg. Hates Dwarfs.)
+  %li
+    %code fears
+    (optional) A long form sentence describing what the minion fears (eg. Fears snakes.)
+  %li
+    %code traits
+    (optional) A comma separated list of traits, culminated by a period.
+  %li
+    %code eyes
+    Eye color.
+  %li
+    %code hair
+    A sentence describing hair color and style worn by this minion.
+  %li
+    %code skin
+    Skin color.
+  %li
+    %code features
+    (optional) Distinguishing feature.
+  %li
+    %code appearance
+    A long form sentence describing minion's appearance (eye color, hair style, features, etc..)
+  %li
+    %code primary_weapon
+    Primary weapon used by this minion.
+  %li
+    %code weapon_type
+    Material from which the primary weapon is made from.
+  %li
+    %code secondary_weapon
+    (optional) Secondary weapon used by the minion (usually missile weapon).
+  %li
+    %code weapons
+    A long form sentence listing all of the minion's weapons.
+  %li
+    %code armor_category
+    The type of armor worn by the minion (leather, plate. etc..)
+  %li
+    %code armor_type
+    The material the minion's armor is made of.
+  %li
+    %code armor
+    The armor the minion is wearing.
+
