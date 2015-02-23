@@ -40,3 +40,7 @@
             #{minion.armor}
             %span.text-muted
               (#{minion.armor_category.downcase})
+
+          %p
+            %img(src='/#{minion.gender}.jpg' alt='#{minion.gender}' title='#{minion.gender}')
+            %img(src='/#{minion.class}.jpg' alt='#{minion.class}' title='#{minion.class}')
