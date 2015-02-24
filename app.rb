@@ -33,3 +33,7 @@ end
 get '/json/?' do
   haml :json
 end
+
+not_found do
+  haml :err404
+end
