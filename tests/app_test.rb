@@ -45,6 +45,36 @@ class MainAppTest < Minitest::Test
     assert_equal 1, response.count
   end
 
+  def test_json_with_decimal
+    get '/json/1.3'
+    assert_equal 404, last_response.status
+  end
+
+  def test_json_with_decimal_trailing_slash
+    get '/json/1.3/'
+    assert_equal 404, last_response.status
+  end
+
+  def test_json_with_mixed_num_alpha
+    get '/json/1abc'
+    assert_equal 404, last_response.status
+  end
+  
+  def test_json_with_mixed_num_alpha_trauling_slash
+    get '/json/1abc/'
+    assert_equal 404, last_response.status
+  end
+
+  def test_json_with_mixed_num_nonalpha
+    get '/json/1-2bc'
+    assert_equal 404, last_response.status
+  end
+
+  def test_json_with_mixed_num_nonalpha_trailing_slash
+    get '/json/1-2bc/'
+    assert_equal 404, last_response.status
+  end
+
   def test_json_with_0
     get '/json/0'
     assert last_response.ok?

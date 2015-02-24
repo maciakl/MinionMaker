@@ -15,7 +15,7 @@ get '/random/?' do
  haml :index
 end
 
-get %r{/json/([\d+]+)} do |number|
+get %r{/json/([\d+]+)/?$} do |number|
   number = Integer(number)
   number = number > 50 ? 50 : number
   output = {}
