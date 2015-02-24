@@ -3,59 +3,66 @@
 
 %hr
 
-%img(src='/warrior.jpg')
-%img(src='/scout.jpg')
-%img(src='/fighter.jpg')
-%img(src='/bard.jpg')
-%img(src='/ranger.jpg')
-%img(src='/rogue.jpg')
-%img(src='/soldier.jpg')
+.row
 
-%hr
+  .col-md-7
+    %h3 What is Minion Academy?
+
+    %p
+      This page seeks to provide tools and easy to use services to aid game masters
+      and storytellers with randomly generated, system neutral content.
+
+    %p
+      Content is covered under
+      %a{:href => 'http://creativecommons.org/licenses/by-nc-sa/4.0/'} 
+        Creative Commons Attribution Non-Commercial Share-Alike License.
+
+    %img(src='/cc.jpg')
+
+    %hr
+
+  .col-md-4
+    %h3 Generate Random Minions
+
+    %p 
+      Click below to generate six random minions. The results will be provided as
+      a HTML formated page. 
+      
+    %p Refresh the page for another batch of 6 minions.
+
+    %a.btn.btn-default{:href => '/random'} 
+      %i.glyphicon.glyphicon-random 
+      Generate 6 Minions
+
+    %hr
+
+.row
+
+  .col-md-10
+    %h3 Web Service
+
+    %p 
+      You can use minion.academy as a web service in your project. To generate a
+      list of six minions as a valid JSON object simply access:
+
+    %p
+      %code
+        http://minion.academy/json/6
+
+    %p Or from ruby:
+
+    %pre
+      %code.ruby
+        :preserve
+          require 'open-uri'
+          require 'json'
+          minions = JSON.parse(open("http://minion.academy/json/6").read)
 
 
-%h3 What is Minion Academy?
+    %p Click below for more information, reference and code samples.
 
-%p
-  This page seeks to provide tools and easy to use services to aid game masters
-  and storytellers with randomly generated content.
-
-%hr
-
-%h3 Random Minions
-
-%p Click below to generate six random minions. Refresh the page for another batch.
-
-%a.btn.btn-default{:href => '/random'} 
-  %i.glyphicon.glyphicon-random
-  Generate 6 Minions
-
-%hr
-
-%h3 Web Service
-
-%p 
-  You can use minion.academy as a web service in your project. To generate a
-  list of six minions as a valid JSON object simply access:
-
-%p
-  %code
-    http://minion.academy/json/6
-
-%p Or from ruby:
-
-%pre
-  %code.ruby
-    :preserve
-      require 'open-uri'
-      require 'json'
-      minions = JSON.parse(open("http://minion.academy/json/6").read)
-
-
-%p Click below for more information, reference and code samples.
-
-%a.btn.btn-default{:href => '/json'}
-  %i.fa.fa-code
-  Learn More...
+    %a.btn.btn-default{:href => '/json'}
+      %i.fa.fa-code
+      Learn More ...
 
 
