@@ -66,6 +66,17 @@
       puts minions['1']['name']
       puts minions['2']['name']
 
+%p 
+  To use it from the command line you may need
+  %code jq
+  and
+  %code curl
+
+%pre
+  %code.bash
+    :preserve
+      curl -s http://www.minion.academy/json/1/ | jq '.["1"].name'
+
 
 %h3 Reference
 

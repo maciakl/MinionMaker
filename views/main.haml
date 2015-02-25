@@ -49,14 +49,21 @@
       %code
         http://minion.academy/json/6
 
-    %p Or from ruby:
+    %p From ruby:
 
     %pre
       %code.ruby
         :preserve
           require 'open-uri'
           require 'json'
-          minions = JSON.parse(open("http://minion.academy/json/6").read)
+          minions = JSON.parse(open("http://www.minion.academy/json/6").read)
+
+    %p Or on the command line:
+
+    %pre
+      %code.bash
+        :preserve
+          curl -s http://www.minon.academy/json/1 | jq 
 
 
     %p Click below for more information, reference and code samples.
